@@ -89,8 +89,6 @@ $("#submit").click(function(e){
         requiredFieldsFilled = true;
     }
 
-
-
     if(requiredFieldsFilled != false){
 
         //Create a temp user that will be persistently stored by SQL. 
@@ -107,9 +105,6 @@ $("#submit").click(function(e){
 
         alert(userOnPage.age + " and " + userOnPage.weight + " is " + userOnPage.name+" y0 "+ userOnPage.gender);
     }
-
-
-       
 });
 
 
