@@ -53,7 +53,7 @@ var myLineChart = new Chart(ctx, {
     data: data,
     options: options
 });
-
+document.getElementById("mychart").innerHTML = myLineChart;
 </script>
 
 <script>
