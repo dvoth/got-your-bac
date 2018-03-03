@@ -62,7 +62,7 @@ $("#submit").click(function(e){
     if(requiredFieldsFilled != false){
 
         //Create a temp user that will be persistently stored by SQL. 
-        var userOnPage = new user(userName.val(), userAge.val(), userWeight.val(), 0.0,userGender.val());
+        var userOnPage = new user(userName.val(), userAge.val(), userWeight.val(), 9.0,userGender.val());
 
         //Clear the input fields once we have persistently stored a user.
         userName.val("");
@@ -75,14 +75,23 @@ $("#submit").click(function(e){
         alert(userOnPage.age + " and " + userOnPage.weight + " is " + userOnPage.name+" y0 "+ userOnPage.gender);
     }
 
+
+    if(userOnPage.BAClevel >= 8)
+    {
+    console.log( $("#eightwarn").innerHTML);
+    $("#eightwarn").removeClass("hidden");
+    $("#eightwarn").addClass("wrapper");
+
+    }
+
+console.log(userOnPage);
+
 });
 
-if(user.BAClevel>=8)
-{
-    $("#eightwarn").removeClass("hidden");
-}
+
 
 var interval = setInterval( function () {
+
     updateBAC();},     
  60000);
 
