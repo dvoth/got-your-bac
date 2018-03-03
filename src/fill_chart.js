@@ -1,4 +1,6 @@
 var colorInc = 1;
+// Conversion factor for converting the metrics into out of 35.
+var conversionFactor = 2.8571;
 
 $(function()
 {
@@ -13,13 +15,13 @@ $(function()
     
     if(val != ""
       && !isNaN(val)
-      && val <= 100
+      && val <= 35
       && val >= 0)
     {
       console.log(val);
       
       var valOrig = val;
-      val = 100 - val;
+      val = 35 - val;
       
       if(valOrig == 0)
       {
@@ -29,7 +31,7 @@ $(function()
       else $(".progress .percent").text(valOrig + "%");
       
       $(".progress").parent().removeClass();
-      $(".progress .water").css("top", val + "%");
+      $(".progress .water").css("top", val * conversionFactor + "%");
       
       if(valOrig < colorInc * 7)
         $(".progress").parent().addClass("green");
