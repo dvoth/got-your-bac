@@ -57,8 +57,8 @@
       
         <!-- Form for user input. -->
 
-        <div id="register" class="w3-sidebar w3-bar-block w3-display-container w3-display-topleft" style="display:none">
-            <button onclick="w3_close()" class="w3-bar-item w3-button w3-large">
+        <div id="register" class="w3-sidebar w3-bar-block w3-display-container w3-display-topleft w3-animate-left" style="display:none">
+            <button onclick="w3_close()" class="w3-bar-item w3-button w3-large" class="closeButton">
                 <i class="fas fa-times"></i>
             </button>
             <div id="registration" class="w3-container">
@@ -94,7 +94,7 @@
             <i class="fas fa-user-plus"></i>
         </button>
 
-        <div id="login" class="w3-sidebar w3-bar-block w3-display-container w3-display-topleft" style="display:none">
+        <div id="login" class="w3-sidebar w3-bar-block w3-display-container w3-display-topleft w3-animate-left" style="display:none">
             <button onclick="w3_close_login()" class="w3-bar-item w3-button w3-large">
                 <i class="fas fa-times"></i>
             </button>
