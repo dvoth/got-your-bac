@@ -8,9 +8,8 @@ class user{
     getBAClevel() {
         return BAClevel;
     }
-}
-class backend{
-    calculateBAC(user, drinkSize, percentage){
+
+    calculateBAC(drinkSize, percentage){
         var genderConstant; 
         if(user.gender = "male"){
             genderConstant = 0.68;
@@ -25,10 +24,10 @@ class backend{
 
     }
     
-    updateBAC(user){
+    updateBAC(){
         user.BAClevel = user.BAClevel - ((1/60) * 0.015);
     }
-    updateBACHourly(user){
+    updateBACHourly(){
         user.BAClevel = user.BAClevel - ((1) * 0.015);
     }
 }

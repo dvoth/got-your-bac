@@ -64,7 +64,17 @@ var myChart = new Chart(ctx, {
                     beginAtZero:true,
                     min: 0,
                     max: 0.3
-                }
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'BAC Level'
+                  }
+            }],
+            xAxes:[{
+                scaleLabel: {
+                    display: true,
+                    labelString: 'TIME (hours)'
+                  }
             }]
         }
     }
