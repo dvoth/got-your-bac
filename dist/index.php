@@ -39,16 +39,29 @@
                 
                 <span>Current BAC: <input type="text" placeholder="0" id="percent-box">%</span><br>
                 
+                <div id="sixteenwarn" class="hidden" >
+                    <span> Not trying to be your mother, but soon you're gonna be a sloppy joe.<br>
+                            Cut the liquor and stick to some water 
+                    </span>
+                </div><br><br>
+
+                <div id="thirteenwarn" class="hidden" >
+                    <span> Things are probably getting a little fuzzy now..
+                            Take a thirty minute water break to let your ming catch up
+                    </span>
+                </div><br><br><br><br>
+
+
+
                 <div id="eightwarn" class="hidden" >
-                <span> Currently, you cannot drive. Here are alternative options </span>
-                <span><br>
-                <a href ="https://www.uber.com"><img src="../src/images/Uber.png" id="ublogo" alt="uber"></a>
-                <a href = "https://www.lyft.com"><img src="../src/images/lyft-logo.png" id="lylogo" alt="lyft" ></a>
-                <a href = "https://google.com"><img src="../src/images/phoneicon.jpg" id="phonelogo" alt="phone" ></a>
-                </span>
-                </div>
-             
-                
+                    <span> <header>Currently, you cannot drive. Here are alternative options </header></span>
+                    <span><br>
+                        <a href ="https://www.uber.com"><img src="../src/images/Uber.png" id="ublogo" alt="uber"></a>
+                        <a href = "https://www.lyft.com"><img src="../src/images/lyft-logo.png" id="lylogo" alt="lyft" ></a>
+                        <a href = "https://google.com"><img src="../src/images/phoneicon.jpg" id="phonelogo" alt="phone" ></a>
+                    </span>
+                </div><br><br><br><br><br><br>
+
                 <section id="copyright">
                 <div>(c) 2015 John Mothershed - <a href="https://opensource.org/licenses/MIT">License MIT</a> </div>
                 

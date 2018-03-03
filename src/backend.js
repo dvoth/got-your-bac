@@ -7,6 +7,35 @@ class user{
         this.gender = gender; 
     }
 
+    checkForBACWarning(){
+        if(this.BAClevel >= 8)
+        {
+        console.log( $("#eightwarn").innerHTML);
+        $("#eightwarn").removeClass("hidden");
+        $("#eightwarn").addClass("wrapper");
+    
+        }
+         if(this.BAClevel<14 && this.BAClevel>8)
+        {
+            $("#eightwarn").addClass("hidden");
+            $("#eightwarn").removeClass("wrapper");
+            $("#thirteenwarn").removeClass("hidden");
+            $("#thirteenwarn").addClass("wrapper");
+
+
+        }
+    
+         if(this.BAClevel<19 && this.BAClevel>13)
+        {
+
+             $("#sixteenwarn").removeClass("hidden");
+            $("#sixteenwarn").addClass("wrapper");
+            $("#thirteenwarn").addClass("hidden");
+            $("#thirteenwarn").removeClass("wrapper");
+
+        }
+    }
+
 }
 class backend{
     calculateBAC(user, drinkSize, percentage){
@@ -27,7 +56,10 @@ class backend{
     updateBAC(user){
         user.BAClevel = user.BAClevel - ((1/60) * 0.015);
     }
-}
+
+
+    }
+
 
 // Grabbing inputs using jQuery.
 $("#submit").click(function(e){
@@ -62,7 +94,8 @@ $("#submit").click(function(e){
     if(requiredFieldsFilled != false){
 
         //Create a temp user that will be persistently stored by SQL. 
-        var userOnPage = new user(userName.val(), userAge.val(), userWeight.val(), 9.0,userGender.val());
+        var userOnPage = new user(userName.val(), userAge.val(), userWeight.val(), 13.0,userGender.val());
+        userOnPage.checkForBACWarning();
 
         //Clear the input fields once we have persistently stored a user.
         userName.val("");
@@ -76,16 +109,7 @@ $("#submit").click(function(e){
     }
 
 
-    if(userOnPage.BAClevel >= 8)
-    {
-    console.log( $("#eightwarn").innerHTML);
-    $("#eightwarn").removeClass("hidden");
-    $("#eightwarn").addClass("wrapper");
-
-    }
-
-console.log(userOnPage);
-
+       
 });
 
 
