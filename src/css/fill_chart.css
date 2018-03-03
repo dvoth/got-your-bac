@@ -12,7 +12,7 @@
     font-size: 15px;
     color: #ccc;
   }
-  input[type="text"] {
+  input#percent-box {
     background-color: transparent;
     margin-top: 30px;
     border: 0;
@@ -24,31 +24,31 @@
     width: 45px;
     display: inline-block;
   }
-  input:focus {
+  input#percent-box:focus {
     outline: 0;
     border-bottom: dashed 1px #ff8080;
   }
-  input::-moz-selection {
+  input#percent-box::-moz-selection {
     color: #1a1a1a;
     background-color: #c6e4ee;
   }
-  input::selection {
+  input#percent-box::selection {
     color: #1a1a1a;
     background-color: #c6e4ee;
   }
-  ::-webkit-input-placeholder {
+  #percent-box ::-webkit-input-placeholder {
     color: #7aa6f3;
     text-shadow: 0 0 3px #7aa6f3;
   }
-  :-moz-placeholder {
+  #percent-box :-moz-placeholder {
     color: #7aa6f3;
     text-shadow: 0 0 3px #7aa6f3;
   }
-  ::-moz-placeholder {
+  #percent-box ::-moz-placeholder {
     color: #7aa6f3;
     text-shadow: 0 0 3px #7aa6f3;
   }
-  :-ms-input-placeholder {
+  #percent-box :-ms-input-placeholder {
     color: #7aa6f3;
     text-shadow: 0 0 3px #7aa6f3;
   }
@@ -316,4 +316,19 @@
       -webkit-transform: rotate(360deg);
       transform: rotate(360deg);
     }
+  }
+
+  /* Registration form CSS. */
+  #weightInput {
+    width: 30%
+  }
+
+  #registration label{
+    color: green;
+    text-shadow: 0 0 3px lightgreen;
+  }
+
+  #login label{
+    color: green;
+    text-shadow: 0 0 3px lightgreen;
   }

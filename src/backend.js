@@ -39,16 +39,13 @@ $("#submit").click(function(e){
     var userAge = $("#ageInput");
     var userWeight = $("#weightInput");
     var userGender = $("input[name=gender]:checked");
-
-
-    
-
-
+    var userUsername = $("#usernameInput");
+    var userPassword = $("#passwordInput");
 
 
     //Making sure everything is filled before submitting it.
     var requiredFieldsFilled;
-    if(userName.val() == "" || userAge.val() == "" || userWeight == "" || userGender.val() == undefined){
+    if(userName.val() == "" || userAge.val() == "" || userWeight.val() == "" || userGender.val() == undefined || userUsername.val() == "" || userPassword.val() == ""){
         requiredFieldsFilled = false;
         alert("Please fill all fields.");
     }
@@ -68,6 +65,8 @@ $("#submit").click(function(e){
         userAge.val("");
         userWeight.val("");
         userGender.val("");
+        userUsername.val("");
+        userPassword.val("");
 
         alert(userOnPage.age + " and " + userOnPage.weight + " is " + userOnPage.name+" y0 "+ userOnPage.gender);
     }
