@@ -6,9 +6,11 @@ class user{
         this.gender = gender; 
     }
 
-}
-class backend{
-    calculateBAC(user, drinkSize, percentage){
+    getBAClevel() {
+        return BAClevel;
+    }
+
+    calculateBAC(drinkSize, percentage){
         var genderConstant; 
         if(user.gender = "male"){
             genderConstant = 0.68;
@@ -23,10 +25,14 @@ class backend{
 
     }
     
-    updateBAC(user){
+    updateBAC(){
         user.BAClevel = user.BAClevel - ((1/60) * 0.015);
     }
+    updateBACHourly(){
+        user.BAClevel = user.BAClevel - ((1) * 0.015);
+    }
 }
+
 var interval = setInterval( function () {
     updateBAC();},     
  60000);
