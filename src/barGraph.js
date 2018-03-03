@@ -1,4 +1,3 @@
-
 var d = new Date();
 var time = d.getHours();
 if(time > 12){
@@ -37,17 +36,17 @@ if(t5 > 12){
      t5  = t5 - 12;    
 }
 
-var ctx = document.getElementById("bacChart");
-var myChart = new Chart(ctx, {
-    type: 'line',
+var ctx = document.getElementById("barGraph");
+var bargraph = new Chart(ctx, {
+    type: 'bar',
     data: {
-        labels: [time, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12],
-        xAxisID: 'TIME', 
-        yAxisID: 'BAC LEVEL',
+        labels: [time, t1, t2, t3, t4, t5, t6],
+        xAxisID: 'DAY', 
+        yAxisID: 'NUM OF DRINKS',
         datasets: [{
-            label: 'BAC Level over time',
+            label: 'Number of Drinks Per Day',
             
-            data: [0.18, 0.165,0.15, 0.135, 0.12, 0.105, 0.09, 0.075, 0.065, 0.032, 0.020, 0.010, 0.007],
+            data: [1,2,3,4,5,6, 7],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)'
             ],
@@ -62,27 +61,25 @@ var myChart = new Chart(ctx, {
             yAxes: [{
                 ticks: {
                     beginAtZero:true,
-                    min: 0,
-                    max: 0.3
                 },
                 scaleLabel: {
                     display: true,
-                    labelString: 'BAC Level'
+                    labelString: 'Number of Drinks'
                   }
             }],
             xAxes:[{
+                ticks: {
+                    beginAtZero:true,
+                    max:31
+                },
                 scaleLabel: {
                     display: true,
-                    labelString: 'TIME (hours)'
+                    labelString: 'Day'
                   }
             }]
         }
     }
 });
-
-document.getElementById("BACButton").onclick = function () {
-    document.getElementById("bacChart").innerHTML = myChart;
-    };
-document.getElementById("homeButton").onclick = function () {
-    location.href = "../dist/index.php";
+document.getElementById("barButton").onclick = function () {
+    document.getElementById("barGraph").innerHTML = bargraph;
     };
