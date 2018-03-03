@@ -5,7 +5,9 @@ class user{
         this.BAClevel = BAClevel;
         this.gender = gender; 
     }
-
+    getBAClevel() {
+        return BAClevel;
+    }
 }
 class backend{
     calculateBAC(user, drinkSize, percentage){
