@@ -141,7 +141,7 @@
     animation-name: spin;
   }
   .green .progress .inner .water {
-    top: 25%;
+    top: 100%;
   }
   .green .progress .inner .water {
     background: rgba(83,252,83,0.5);

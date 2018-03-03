@@ -32,18 +32,18 @@ $(function()
       $(".progress .water").css("top", val + "%");
       
       if(valOrig < colorInc * 1)
-        $(".progress").parent().addClass("red");
+        $(".progress").parent().addClass("green");
       else if(valOrig < colorInc * 2)
         $(".progress").parent().addClass("orange");
       else
-        $(".progress").parent().addClass("green");
+        $(".progress").parent().addClass("red");
     }
     else
     {
       $(".progress").parent().removeClass();
       $(".progress").parent().addClass("green");
       $(".progress .water").css("top", 100 - 0 + "%");
-      $(".progress .percent").text(67 + "%");
+      $(".progress .percent").text(0 + "%");
       $("#percent-box").val("");
     }
   });
