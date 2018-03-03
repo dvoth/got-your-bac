@@ -38,17 +38,25 @@ $("#submit").click(function(e){
     var userName = $("#nameInput");
     var userAge = $("#ageInput");
     var userWeight = $("#weightInput");
-    var userGender = $("#genderInput");
+    var userGender = $("input[name=gender]:checked");
+
+
+    
+
+
+
 
     //Making sure everything is filled before submitting it.
     var requiredFieldsFilled;
-    if(userName.val() == "" || userAge.val() == "" || userWeight == "" || userGender == ""){
+    if(userName.val() == "" || userAge.val() == "" || userWeight == "" || userGender.val() == undefined){
         requiredFieldsFilled = false;
         alert("Please fill all fields.");
     }
     else{
         requiredFieldsFilled = true;
     }
+
+
 
     if(requiredFieldsFilled != false){
 
@@ -61,7 +69,7 @@ $("#submit").click(function(e){
         userWeight.val("");
         userGender.val("");
 
-        alert(userOnPage.age + " and " + userOnPage.weight + " is " + userOnPage.name);
+        alert(userOnPage.age + " and " + userOnPage.weight + " is " + userOnPage.name+" y0 "+ userOnPage.gender);
     }
 
 });

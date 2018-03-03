@@ -57,7 +57,13 @@
                 <input id = "ageInput" type="text" placeholder="Age" class="required">
                 <br>
                 <label for="genderInput">Gender (M or F): </label>
-                <input id = "genderInput" type="text" placeholder="Gender" class="required">
+                <input class ="genderInput" id="m" type="radio" name="gender" value="male"> M    
+                <input class ="genderInput" id="f" type="radio" name="gender" value="female">F<br>
+             
+                
+                
+                
+                
                 <br>
                 <button id="submit">Submit</button>
             </form>
