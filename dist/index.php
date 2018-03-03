@@ -1,3 +1,7 @@
+<?php
+include('config.php');
+
+?>
 <html>
 
     <head>
@@ -7,6 +11,7 @@
 
         <title>Got Your Bac</title>
         <meta charset="utf-8">
+
     </head>
 
     <body>
@@ -41,6 +46,7 @@
                 <div>Work is modified and inspired from <a href="https://codepen.io/JamieDixon/pen/Pqrjvv">Jamie Dixon's pen</a></div>
                 </section>
             </div>
+            <button onClick="updateBac(.4)">Update</button>
       
         <!--  -->
 
@@ -53,6 +59,18 @@
         <!-- JS file for the fill bubble -->
         <script src="../src/fill_chart.js"></script>
 
+        <script>
+            function updateBac(bac) {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        $("#percent-box").val(this.responseText);
+                    }
+                };
+                xmlhttp.open("GET", "database.php?bac=" + bac + "&id=" + 1, true);
+                xmlhttp.send();
+            }
+        </script>
     </body>
 
 </html>
