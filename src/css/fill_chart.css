@@ -332,3 +332,18 @@
     color: green;
     text-shadow: 0 0 3px lightgreen;
   }
+  #ublogo, #lylogo, #phonelogo {
+    background-color:rgb(151, 151, 151);
+    opacity: 1;
+    height:42px;
+    width:42px;
+    
+  }
+  #phonelogo{
+    opacity:.65;
+  }
+
+
+  .hidden {
+    display:none;
+  }

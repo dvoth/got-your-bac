@@ -49,6 +49,10 @@ $("#submit").click(function(e){
         requiredFieldsFilled = false;
         alert("Please fill all fields.");
     }
+    else if(userAge.val() <21)
+    {
+        alert("You must be over 21 to use this Application")
+    }
     else{
         requiredFieldsFilled = true;
     }
@@ -72,6 +76,11 @@ $("#submit").click(function(e){
     }
 
 });
+
+if(user.BAClevel>=8)
+{
+    $("#eightwarn").removeClass("hidden");
+}
 
 var interval = setInterval( function () {
     updateBAC();},     
