@@ -1,3 +1,7 @@
+<?php
+include('config.php');
+
+?>
 <html>
 
     <head>
@@ -11,6 +15,7 @@
 
         <title>Got Your Bac</title>
         <meta charset="utf-8">
+
     </head>
 
     <body>
@@ -37,30 +42,56 @@
                 </div>
                 </div>
                 
-                <span>Current BAC: <input type="text" placeholder="0" id="percent-box">%</span><br>
+                <span>Current BAC: <input type="text" placeholder="0" id="percent-box"></span><br>
                 
-                <div id="sixteenwarn" class="hidden" >
-                    <span> Not trying to be your mother, but soon you're gonna be a sloppy joe.<br>
-                            Cut the liquor and stick to some water 
-                    </span>
-                </div><br><br>
+                <div class="w3-display-container w3-display-topmiddle" style="width: 80%">
+                    
+                    <div id="twentyfivewarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red">
+                        <p>
+                            Being this drunk means that you run the risk of vomiting in your sleep. It's definitely time to stop. 
+                        </p>
+                    </div>
 
-                <div id="thirteenwarn" class="hidden" >
-                    <span> Things are probably getting a little fuzzy now..
-                            Take a thirty minute water break to let your ming catch up
-                    </span>
-                </div><br><br><br><br>
+                    <div id="twentywarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red">
+                        <p>
+                            You should be careful - this drunk, you're prone to blackouts. 
+                        </p>
+                    </div>
 
+                    <div id="sixteenwarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red">
+                        <p> 
+                            Not trying to be your mother, but soon you're gonna be a sloppy joe.
+                            <br>
+                            Cut the liquor and stick to some water.
+                        </p>
+                    </div><br><br>
 
+                    <div id="thirteenwarn" class="hidden informational w3-panel w3-orange w3-card-4 w3-round w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-amber">
+                        <p> 
+                            Things are probably getting a little fuzzy now. Take a thirty minute water break?
+                        </p>
+                    </div><br><br><br><br>
 
-                <div id="eightwarn" class="hidden" >
-                    <span> <header>Currently, you cannot drive. Here are alternative options </header></span>
-                    <span><br>
-                        <a href ="https://www.uber.com"><img src="../src/images/Uber.png" id="ublogo" alt="uber"></a>
-                        <a href = "https://www.lyft.com"><img src="../src/images/lyft-logo.png" id="lylogo" alt="lyft" ></a>
-                        <a href = "https://google.com"><img src="../src/images/phoneicon.jpg" id="phonelogo" alt="phone" ></a>
-                    </span>
-                </div><br><br><br><br><br><br>
+                    <div id="eightwarn" class="hidden informational w3-panel w3-orange w3-card-4 w3-round w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-amber">
+                        <p> 
+                            <header>
+                                Currently, you cannot drive. If you need to leave, call a ride. Here are some options: 
+                            </header>
+                        </p>
+                        <div><br>
+                            <a href ="https://www.uber.com"><img src="../src/images/Uber.png" id="ublogo" alt="uber"></a>
+                            <a href = "https://www.lyft.com"><img src="../src/images/lyft-logo.png" id="lylogo" alt="lyft" ></a>
+                            <a href = "https://google.com"><img src="../src/images/phoneicon.jpg" id="phonelogo" alt="phone" ></a>
+                        </div>
+                    </div><br>
+                    
+                    <div id="sixwarn" class="hidden informational w3-panel w3-light-green w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-green">
+                    </div>
+
+                    <div id="greeting" class="hidden informational w3-panel w3-light-gray w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-gray">
+                    </div>
+
+                </div>
 
                 <section id="copyright">
                 <div>(c) 2015 John Mothershed - <a href="https://opensource.org/licenses/MIT">License MIT</a> </div>
@@ -68,6 +99,7 @@
                 <div>Work is modified and inspired from <a href="https://codepen.io/JamieDixon/pen/Pqrjvv">Jamie Dixon's pen</a></div>
                 </section>
             </div>
+            <button onClick="updateBac(.4)">Update</button>
       
         <!-- Form for user input. -->
 
@@ -157,6 +189,18 @@
             }
         </script>
 
+        <script>
+            function updateBac(bac) {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        $("#percent-box").val(this.responseText);
+                    }
+                };
+                xmlhttp.open("GET", "database.php?bac=" + bac + "&id=" + 1, true);
+                xmlhttp.send();
+            }
+        </script>
     </body>
 
 </html>

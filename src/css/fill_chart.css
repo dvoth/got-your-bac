@@ -364,3 +364,12 @@
 
     position: relative;
   }
+
+  .informational{
+    text-align: center;
+    font-family: Helvetica;
+  }
+
+  .informational p{
+    color: white;
+  }

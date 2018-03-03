@@ -108,7 +108,7 @@ class backend{
 
     }
     
-    updateBAC(user){
+    updateBAC(){
         user.BAClevel = user.BAClevel - ((1/60) * 0.015);
     }
 
@@ -143,8 +143,6 @@ $("#submit").click(function(e){
     else{
         requiredFieldsFilled = true;
     }
-
-
 
     if(requiredFieldsFilled != false){
 
