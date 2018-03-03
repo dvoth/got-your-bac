@@ -26,6 +26,9 @@ class backend{
     updateBAC(user){
         user.BAClevel = user.BAClevel - ((1/60) * 0.015);
     }
+    updateBACHourly(user){
+        user.BAClevel = user.BAClevel - ((1) * 0.015);
+    }
 }
 var interval = setInterval( function () {
     updateBAC();},     
