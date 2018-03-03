@@ -1,0 +1,26 @@
+{
+  "name": "got-your-bac",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvoth/got-your-bac.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dvoth/got-your-bac/issues"
+  },
+  "homepage": "https://github.com/dvoth/got-your-bac#readme",
+  "devDependencies": {
+    "bootstrap": "^4.0.0",
+    "webpack": "^4.0.1"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
