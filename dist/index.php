@@ -1,3 +1,7 @@
+<?php
+include('config.php');
+
+?>
 <html>
 
     <head>
@@ -11,6 +15,7 @@
 
         <title>Got Your Bac</title>
         <meta charset="utf-8">
+
     </head>
 
     <body>
@@ -37,7 +42,7 @@
                 </div>
                 </div>
                 
-                <span>Current BAC: <input type="text" placeholder="0" id="percent-box">%</span><br>
+                <span>Current BAC: <input type="text" placeholder="0" id="percent-box"></span><br>
                 
                 <div class="w3-display-container w3-display-topmiddle" style="width: 80%">
                     
@@ -94,6 +99,7 @@
                 <div>Work is modified and inspired from <a href="https://codepen.io/JamieDixon/pen/Pqrjvv">Jamie Dixon's pen</a></div>
                 </section>
             </div>
+            <button onClick="updateBac(.4)">Update</button>
       
         <!-- Form for user input. -->
 
@@ -183,6 +189,18 @@
             }
         </script>
 
+        <script>
+            function updateBac(bac) {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        $("#percent-box").val(this.responseText);
+                    }
+                };
+                xmlhttp.open("GET", "database.php?bac=" + bac + "&id=" + 1, true);
+                xmlhttp.send();
+            }
+        </script>
     </body>
 
 </html>
