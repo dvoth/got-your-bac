@@ -33,7 +33,16 @@
                 </div>
                 </div>
                 
-                <span>Enter Percentage: <input type="text" placeholder="0" id="percent-box">%</span>
+                <span>Current BAC: <input type="text" placeholder="0" id="percent-box">%</span><br>
+                
+                <div id="#eightwarn" class="hidden" class="wrapper" >
+                <span> Currently, you cannot drive. Here are alternative options </span>
+                <span><br>
+                <a href ="https://www.uber.com"><img src="../src/images/Uber.png" id="ublogo" alt="uber"></a>
+                <a href = "https://www.lyft.com"><img src="../src/images/lyft-logo.png" id="lylogo" alt="lyft" ></a>
+                <a href = "https://google.com"><img src="../src/images/phoneicon.jpg" id="phonelogo" alt="phone" ></a>
+                </span>
+                </div>
                 
                 <section id="copyright">
                 <div>(c) 2015 John Mothershed - <a href="https://opensource.org/licenses/MIT">License MIT</a> </div>
