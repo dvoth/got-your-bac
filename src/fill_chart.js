@@ -1,4 +1,4 @@
-var colorInc = 100 / 3;
+var colorInc = 1;
 
 $(function()
 {
@@ -31,9 +31,9 @@ $(function()
       $(".progress").parent().removeClass();
       $(".progress .water").css("top", val + "%");
       
-      if(valOrig < colorInc * 1)
+      if(valOrig < colorInc * 7)
         $(".progress").parent().addClass("green");
-      else if(valOrig < colorInc * 2)
+      else if(valOrig < colorInc * 16)
         $(".progress").parent().addClass("orange");
       else
         $(".progress").parent().addClass("red");
