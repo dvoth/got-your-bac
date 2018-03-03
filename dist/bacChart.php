@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<header>
+<script src="../node_modules/chart.js/dist/Chart.bundle.min.js"></script>
+</header>
 <body>
 
 <p>Click the button to display the hour of the time right now.</p>
@@ -12,7 +15,7 @@
 <script>
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
         datasets: [{
@@ -48,15 +51,8 @@ var myChart = new Chart(ctx, {
     }
 });
 
-var myLineChart = new Chart(ctx, {
-    type: 'line',
-    data: data,
-    options: options
-});
-document.getElementById("mychart").innerHTML = myLineChart;
-</script>
+document.getElementById("mychart").innerHTML = myChart;
 
-<script>
 
 function myFunction() {
     var d = new Date();
