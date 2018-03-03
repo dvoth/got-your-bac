@@ -26,9 +26,9 @@ $(function()
       if(valOrig == 0)
       {
         $("#percent-box").val(0);
-        $(".progress .percent").text(0 + "%");
+        $(".progress .percent").text("." + 0);
       }
-      else $(".progress .percent").text(valOrig + "%");
+      else $(".progress .percent").text("." + valOrig);
       
       $(".progress").parent().removeClass();
       $(".progress .water").css("top", val * conversionFactor + "%");
@@ -45,7 +45,7 @@ $(function()
       $(".progress").parent().removeClass();
       $(".progress").parent().addClass("green");
       $(".progress .water").css("top", 100 - 0 + "%");
-      $(".progress .percent").text(0 + "%");
+      $(".progress .percent").text("." + 0);
       $("#percent-box").val("");
     }
   });
