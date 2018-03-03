@@ -42,7 +42,7 @@ $(function()
     {
       $(".progress").parent().removeClass();
       $(".progress").parent().addClass("green");
-      $(".progress .water").css("top", 100 - 67 + "%");
+      $(".progress .water").css("top", 100 - 0 + "%");
       $(".progress .percent").text(67 + "%");
       $("#percent-box").val("");
     }
