@@ -53,9 +53,9 @@ class backend{
 
     }
     
-    updateBAC(){
-        user.BAClevel = user.BAClevel - ((1/60) * 0.015);
-    }
+    // updateBAC(){
+    //     user.BAClevel = user.BAClevel - ((1/60) * 0.015);
+    // }
 
 
     }

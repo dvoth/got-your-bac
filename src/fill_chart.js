@@ -33,12 +33,42 @@ $(function()
       $(".progress").parent().removeClass();
       $(".progress .water").css("top", val * conversionFactor + "%");
       
-      if(valOrig < colorInc * 7)
+      if(valOrig < colorInc * 7){
         $(".progress").parent().addClass("green");
-      else if(valOrig < colorInc * 16)
+        $("#registrationbtn").addClass("w3-green");
+        $("#registrationbtn").removeClass("w3-red");
+        $("#registrationbtn").removeClass("w3-orange");
+        $("#loginbtn").addClass("w3-green");
+        $("#loginbtn").removeClass("w3-red");
+        $("#loginbtn").removeClass("w3-orange");
+        $("#datapage").addClass("w3-green");
+        $("#datapage").removeClass("w3-red");
+        $("#datapage").removeClass("w3-orange");
+      }
+      else if(valOrig < colorInc * 16){
         $(".progress").parent().addClass("orange");
-      else
+        $("#registrationbtn").removeClass("w3-green");
+        $("#registrationbtn").removeClass("w3-red");
+        $("#registrationbtn").addClass("w3-orange");
+        $("#loginbtn").removeClass("w3-green");
+        $("#loginbtn").removeClass("w3-red");
+        $("#loginbtn").addClass("w3-orange");
+        $("#datapage").removeClass("w3-green");
+        $("#datapage").removeClass("w3-red");
+        $("#datapage").addClass("w3-orange");
+      }
+      else{
         $(".progress").parent().addClass("red");
+        $("#registrationbtn").removeClass("w3-green");
+        $("#registrationbtn").addClass("w3-red");
+        $("#registrationbtn").removeClass("w3-orange");
+        $("#loginbtn").removeClass("w3-green");
+        $("#loginbtn").addClass("w3-red");
+        $("#loginbtn").removeClass("w3-orange");
+        $("#datapage").removeClass("w3-green");
+        $("#datapage").addClass("w3-red");
+        $("#datapage").removeClass("w3-orange");
+      }
     }
     else
     {

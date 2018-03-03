@@ -132,11 +132,11 @@ include('config.php');
                     <label for="f">F: &ensp;&nbsp;</label>  
                     <input class ="genderInput w3-radio" id="f" type="radio" name="gender" value="female">
                     <br><br>
-                    <button id="submit" class="w3-button w3-black w3-hover-green">Submit</button>
+                    <button id="submit" class="w3-button w3-black w3-hover-green sidebarbtn">Submit</button>
                 </div>
             </div>
         </div>
-        <button class="w3-button w3-green w3-xlarge" onclick="w3_open()">
+        <button id="registrationbtn" class="w3-button w3-green w3-xlarge" onclick="w3_open()">
             <i class="fas fa-user-plus"></i>
         </button>
 
@@ -152,12 +152,16 @@ include('config.php');
                     <label for="userPass">Password: </label>
                     <input class="w3-input" type="password">
                     <br>
-                    <button id="login" class="w3-button w3-black w3-hover-green">Login</button>
+                    <button id="login" class="w3-button w3-black w3-hover-green sidebarbtn">Login</button>
                 </div>
             </div>
         </div>
-        <button class="w3-button w3-green w3-xlarge" onclick="w3_open_login()">
+        <button id="loginbtn" class="w3-button w3-green w3-xlarge" onclick="w3_open_login()">
             <i class="fas fa-sign-in-alt"></i>
+        </button>
+
+        <button id="datapage" class="w3-button w3-green w3-xlarge" onclick="navigate_to_data_page()">
+            <i class="fas fa-chart-line"></i>
         </button>
                    
         <!-- jQuery library -->
@@ -186,6 +190,9 @@ include('config.php');
             }
             function w3_close_login() {
                 document.getElementById("login").style.display = "none";
+            }
+            function navigate_to_data_page() {
+                location.href = "../dist/bacChart.php";
             }
         </script>
 
