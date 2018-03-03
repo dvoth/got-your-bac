@@ -42,7 +42,26 @@
                 </section>
             </div>
       
-        <!--  -->
+        <!-- Form for user input. -->
+
+        <div id="user">
+            <h1>User Info</h1>
+            <form class="userForm">
+                <label for="nameInput">Name: </label>       
+                <input id = "nameInput" type="text" placeholder="Name" class="required">
+                <br>   
+                <label for="weightInput">Weight: </label>
+                <input id = "weightInput" type="text" placeholder="Weight" class="required">
+                <br>
+                <label for="ageInput">Age: </label>
+                <input id = "ageInput" type="text" placeholder="Age" class="required">
+                <br>
+                <label for="genderInput">Gender (M or F): </label>
+                <input id = "genderInput" type="text" placeholder="Gender" class="required">
+                <br>
+                <button id="submit">Submit</button>
+            </form>
+        </div>
 
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -52,6 +71,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <!-- JS file for the fill bubble -->
         <script src="../src/fill_chart.js"></script>
+        <!-- Backend JS for BAC calculation -->
+        <script src="../src/backend.js"></script>
 
     </body>
 

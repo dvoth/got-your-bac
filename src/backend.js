@@ -1,5 +1,6 @@
 class user{
-    constructor(age, weight, BAClevel, gender){
+    constructor(name, age, weight, BAClevel, gender){
+        this.name = name;
         this.age = age;
         this.weight = weight;
         this.BAClevel = BAClevel;
@@ -27,6 +28,45 @@ class backend{
         user.BAClevel = user.BAClevel - ((1/60) * 0.015);
     }
 }
+
+// Grabbing inputs using jQuery.
+$("#submit").click(function(e){
+    //Prevent the page from refreshing.
+    e.preventDefault();
+
+    //Grabbing each input for clearing and taking input properties.
+    var userName = $("#nameInput");
+    var userAge = $("#ageInput");
+    var userWeight = $("#weightInput");
+    var userGender = $("#genderInput");
+
+    //Making sure everything is filled before submitting it.
+    var requiredFieldsFilled;
+    if(userName.val() == "" || userAge.val() == "" || userWeight == "" || userGender == ""){
+        requiredFieldsFilled = false;
+        alert("Please fill all fields.");
+    }
+    else{
+        requiredFieldsFilled = true;
+    }
+
+    if(requiredFieldsFilled != false){
+
+        //Create a temp user that will be persistently stored by SQL. 
+        var userOnPage = new user(userName.val(), userAge.val(), userWeight.val(), 0.0,userGender.val());
+
+        //Clear the input fields once we have persistently stored a user.
+        userName.val("");
+        userAge.val("");
+        userWeight.val("");
+        userGender.val("");
+
+        alert(userOnPage.age + " and " + userOnPage.weight + " is " + userOnPage.name);
+    }
+
+});
+
 var interval = setInterval( function () {
     updateBAC();},     
  60000);
+
