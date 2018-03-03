@@ -5,6 +5,7 @@ class user{
         this.weight = weight;
         this.BAClevel = BAClevel;
         this.gender = gender; 
+
     }
 
     checkForBACWarning(){
@@ -37,6 +38,60 @@ class user{
     }
 
 }
+class party{
+    constructor(name,arrayUsers){
+        this.name = name;
+        this.arrayUsers = arrayUsers;
+    }
+
+
+        addDrinker(user){
+            this.arrayUsers.push(user);
+        }
+
+        removeDrinker(user){
+
+            var pos = this.arrayUsers.indexOf(user);
+            this.arrayUsers.splice(pos,1);
+        }
+        
+        getNumDrinkers()
+        {
+            return this.arrayUsers.length;
+        }
+
+        getUserArray()
+        {
+            return this.arrayUsers;
+        }
+
+        averageBAC()
+        {
+            var total;
+            for(var i=0;i<arrayUsers.length; ++i)
+            {
+                total += this.arrayUsers[i].BAClevel;
+            }
+            return total;
+        }
+
+        highestBac()
+        {
+            var high =0;
+            for(var i=0;i<arrayUsers.length; ++i)
+            {
+                if(this.arrayUsers[i].BAClevel >high)
+                    high = this.arrayUsers[i].BAClevel;
+
+            }
+            return high;
+        }
+        //total/most drinks fn
+        //money spent
+        //most likely to vomit
+
+
+    }
 class backend{
     calculateBAC(user, drinkSize, percentage){
         var genderConstant; 
@@ -108,10 +163,17 @@ $("#submit").click(function(e){
         alert(userOnPage.age + " and " + userOnPage.weight + " is " + userOnPage.name+" y0 "+ userOnPage.gender);
     }
 
-
        
 });
-
+var users =["tom","ur mom","yolo"];
+var issa = new party("pineapple",users);
+console.log(issa);
+issa.addDrinker("potato");
+console.log(issa);
+issa.removeDrinker("yolo");
+console.log(issa);
+var rand = issa.getNumDrinkers();
+console.log(rand);
 
 
 var interval = setInterval( function () {
