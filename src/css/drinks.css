@@ -4,15 +4,15 @@ body {
 
 .drinks-container {
   height:100%;
+  background-color:#575859;
 }
 
 .drink {
+  margin-top:50%;
   height: 260px;
   width: 250px;
-  background: #53BBF4;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  position: relative;
 }
 
 .size {
@@ -46,11 +46,8 @@ body {
 }
 
 svg {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  bottom: 60px;
+  margin-left:35%;
+  margin-top:35%;
 }
 
 .wine {
@@ -190,4 +187,11 @@ svg {
     position: static;
     margin-top: 50px;
   }
+}
+
+.clearfix {
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
 }
