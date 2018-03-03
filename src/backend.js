@@ -5,6 +5,7 @@ class user{
         this.BAClevel = BAClevel;
         this.gender = gender; 
     }
+
     getBAClevel() {
         return BAClevel;
     }
@@ -31,6 +32,7 @@ class user{
         user.BAClevel = user.BAClevel - ((1) * 0.015);
     }
 }
+
 var interval = setInterval( function () {
     updateBAC();},     
  60000);

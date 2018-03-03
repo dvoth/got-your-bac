@@ -9,6 +9,8 @@
         <div class="chartWrapper">
             <div class="chartAreaWrapper">
                 <canvas id="myChart" class="w3-display-topmiddle"></canvas>
+                <button id="myButton" class="float-left submit-button" >Home</button>
+
             </div>
         </div>
 

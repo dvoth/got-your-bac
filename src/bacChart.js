@@ -81,3 +81,6 @@ var myChart = new Chart(ctx, {
 });
 
 document.getElementById("myChart").innerHTML = myChart;
+document.getElementById("myButton").onclick = function () {
+    location.href = "../dist/index.php";
+    };
