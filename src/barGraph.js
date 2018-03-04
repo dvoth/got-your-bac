@@ -33,12 +33,8 @@ $(document).ready(function () {
         datasets: [{
             label: 'Peak BAC Level Per Day',
             data: testdata,
-            backgroundColor: [
-                'rgba(139,195,74, 0.2)'
-            ],
-            borderColor: [
-                'rgba(139,195,74,1)'
-            ],
+            backgroundColor: 'rgba(139,195,74, 0.2)',
+            borderColor: 'rgba(139,195,74,1)',
             borderWidth: 0.5,
         }]
     },
