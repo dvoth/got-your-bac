@@ -55,27 +55,31 @@ include('config.php');
                     
                     <div id="twentyfivewarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
                         <p>
-                            Being this drunk means that you run the risk of vomiting in your sleep. It's definitely time to stop. 
+                            Being this drunk means that you run the risk of vomiting in your sleep. If you dont properly begin to take care of yourself, then
+                            you risk potential death. It's definitely time to stop. Put the drink down. 
                         </p>
                     </div>
 
                     <div id="twentywarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
                         <p>
-                            You should be careful - this drunk, you're prone to blackouts. 
+                            You should be careful - this drunk, you're prone to blackouts. Blacking out is when you are so intoxicated, you
+                            being to do things you normally wouldnt do and you wont remember it. Switch to water stat so you don't embarass yourself. 
                         </p>
                     </div>
 
                     <div id="sixteenwarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
                         <p> 
-                            Not trying to be your mother, but soon you're gonna be a sloppy joe.
+                            You might start feeling a little queasy. At a BAC this high, your speech  will begin to slur and you might find
+                            it hard to control your motor skills. 
                             <br>
-                            Cut the liquor, you'll sober  quicker.
+                            How about you start to cut the liquor; you'll sober  quicker.
                         </p>
                     </div><br><br>
 
                     <div id="thirteenwarn" class="hidden informational w3-panel w3-orange w3-card-4 w3-round w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-amber w3-top">
                         <p> 
-                            Things are probably getting a little fuzzy now. Take a thirty minute water break?
+                            Things are probably getting a little fuzzy now. Your motor controls are probably slowing down. It would be a good idea
+                            to take a 30 minute water break to let your body process all the alcohol you've consumed.
                         </p>
                     </div><br><br><br><br>
 
@@ -94,7 +98,9 @@ include('config.php');
                     </div><br>
                     
                     <div id="sixwarn" class="hidden informational w3-panel w3-light-green w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-green w3-top">
-                    <p>You're probably feeling pretty good right now! Make sure you don't over do it!</p>
+                    <p>You're probably feeling pretty good right now! You are in a "buzzed" state which means that your body feels relaxed, and you are feeling the effects
+                        of alcohol, but won't experience a hangover tomorrow or  experience a blackout state. 
+                    </p>
                     </div>
 
                     <div id="greeting" class="wrapper informational w3-panel w3-light-gray w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-gray w3-top">
