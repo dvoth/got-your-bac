@@ -232,6 +232,10 @@ include('config.php');
                 <i class="fas fa-times"></i>
             </button>
             <div id="party_registration" class="w3-container">
+              
+            <button id = "createP">Create Party</button>
+            <div id="userList"></div>  
+               
             </div>
         </div>
         <button id="partybtn" class="w3-button w3-green w3-xlarge" onclick="party_open()">
