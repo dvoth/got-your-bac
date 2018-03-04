@@ -98,7 +98,7 @@ include('config.php');
 
                     <div id="greeting" class="wrapper informational w3-panel w3-light-gray w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-gray w3-top">
                          <p>
-                            Here, we got your bac... literally.<br> This app is design to make drinkers aware of how much they've consumed 
+                            Here, we got your bac... literally.<br> This app is designed to make drinkers aware of how much they've consumed 
                             and what level their blood alcohol content is at. Please make sure you log in so you can start tracking your
                             drinks!
                         </p>
@@ -241,7 +241,7 @@ include('config.php');
             </button>
             <div id="party_registration" class="w3-container">
               
-            <button id = "createP">Create Party</button>
+            <button class="w3-button w3-green" id ="createP">Create Party</button>
             <div id="userList"></div>  
                
             </div>
