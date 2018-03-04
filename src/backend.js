@@ -198,6 +198,9 @@ $("#submit").click(function(e){
         //Create a temp user that will be persistently stored by SQL. 
         userOnPage = new user(userName.val(), userAge.val(), userWeight.val(), 0.0, userGender.val());
         userOnPage.checkForBACWarning();
+
+        var nameOfCurrentUser = userName.val();
+
         console.log("weight: " + userOnPage.weight);
         console.log("gender: " + userOnPage.gender);
 
@@ -208,6 +211,11 @@ $("#submit").click(function(e){
         userGender.val("");
         userUsername.val("");
         userPassword.val("");
+
+        //Validate a user is now logged in if successful.
+        $("#notLoggedNotifier").addClass("hidden");
+        $("#loggedNotifier").html("Hello " + nameOfCurrentUser + "! Welcome to \"Got Your BAC\". Please input what drinks you consume, so we can help you track your BAC!");
+        $("#loggedNotifier").removeClass("hidden");
 
     }
 });

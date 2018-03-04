@@ -180,6 +180,8 @@ include('config.php');
             <div class="drinks-container w3-display-topright w3-dark-gray"> 
                 <div class="drink beer">
                     <div>
+                        <div class="" id="notLoggedNotifier"><p>In order to record drinks, you need to be signed in as a user.</p></div>
+                        <div class="hidden" id="loggedNotifier"><p></p></div>
                         <svg id="beerGlass" viewbox="0 0 201 350" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
                             <defs>
                                 <clipPath id="beer-clippath">
