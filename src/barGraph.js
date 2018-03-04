@@ -15,10 +15,11 @@ $(document).ready(function () {
     var testdata;
 
     $.ajax({
+        async: false,
         url:'api/drinksPerUnit.php?timeframe=month&id=1',
         type:'get',
         success:function(data){
-            console.log(data)
+            testdata = JSON.parse(data)
         }
     });
     
