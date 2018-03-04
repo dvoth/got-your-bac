@@ -112,10 +112,8 @@ include('config.php');
                 We are not responsible for an accidents or liable for any misconduct that happens while using 
                 the app. If you have even a SINGLE DRINK we do not encourage driving. We encourage you to have 
                 someone who actually has your actual back, while we try to have your BAC.<br>
-
-                Work is modified and inspired from <a href="https://codepen.io/JamieDixon/pen/Pqrjvv">Jamie Dixon's pen</a> <br>
                 
-                (c) 2015 John Mothershed - <a href="https://opensource.org/licenses/MIT">License MIT</a> 
+                (c) 2018 Dalton Voth - <a href="https://opensource.org/licenses/MIT">License MIT</a> 
                 
                 </footer>
             </div>
@@ -295,7 +293,12 @@ include('config.php');
                 document.getElementById("login").style.display = "none";
             }
             function navigate_to_data_page() {
-                location.href = "../dist/bacChart.php?bac=" + userOnPage.BAClevel;
+                if(userOnPage == undefined){
+                    alert("You must be logged in in order to see your statistics.")
+                }
+                else{
+                    location.href = "../dist/bacChart.php?bac=" + userOnPage.BAClevel;
+                }
             }
             function open_drink_adder_close(){
                 document.getElementById("adddrinks").style.display = "none";
@@ -309,9 +312,14 @@ include('config.php');
                 document.getElementById("party").style.display = "none";
             }
             function party_open(){
-                document.getElementById("party").style.width = "21%";
-                document.getElementById("party").style.height = "100%";
-                document.getElementById("party").style.display = "block";
+                if(userOnPage == undefined){
+                    alert("You must be logged in in order to join a party.");
+                }
+                else{
+                    document.getElementById("party").style.width = "21%";
+                    document.getElementById("party").style.height = "100%";
+                    document.getElementById("party").style.display = "block";
+                }
             }
         </script>
         <script src="../src/drinks.js"></script>
