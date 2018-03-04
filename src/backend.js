@@ -73,6 +73,21 @@ class user{
             $("#twentywarn").addClass("hidden");
             $("#twentyfivewarn").addClass("hidden")
         }
+        if(this.BAClevel > .06 && this.BAClevel < .08){
+            $("#greeting").removeClass("wrapper");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").removeClass("hidden");
+            $("#sixwarn").addClass("wrapper");
+            $("#eightwarn").addClass("hidden");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden");
+            $("#sixwarn").removeClass("w3-light-green");
+            $("#sixwarn").removeClass("w3-border-green");
+            $("#sixwarn").addClass("w3-orange");
+            $("#sixwarn").addClass("w3-border-amber");
+        }
         if(this.BAClevel >=.08 && this.BAClevel < .13){
             $("#eightwarn").removeClass("hidden");
             $("#greeting").addClass("hidden");
@@ -162,7 +177,7 @@ class Party{
             {
                 total += this.arrayUsers[i].BAClevel;
             }
-            return total;
+            return total/arrayUsers.length;
         }
 
         highestBac()
@@ -176,9 +191,6 @@ class Party{
             }
             return high;
         }
-        //total/most drinks fn
-        //money spent
-        //most likely to vomit
 }
 
 var userOnPage;
