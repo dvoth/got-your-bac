@@ -103,4 +103,3 @@ var myChart = new Chart(ctx, {
     }
 });
 
-document.getElementById("bacChart").innerHTML = myChart;

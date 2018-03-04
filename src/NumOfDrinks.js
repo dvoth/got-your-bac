@@ -13,7 +13,7 @@ var t6 = time +6;
 
 var testdata;
 
-var xmlhttp = new XMLHttpRequest();
+/* var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         testdata = this.responseText;
@@ -25,17 +25,17 @@ var xmlhttp = new XMLHttpRequest();
                     }
                 };
                 xmlhttp.open("GET", "api/drinksPerUnit.php?timeframe=month&id=1", true);
-                xmlhttp.send();
+                xmlhttp.send(); */
                 
-var ctx = document.getElementById("barGraph");
-var bargraph = new Chart(ctx, {
+var ctx = document.getElementById("drinkGraph");
+var drinkgraph = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: [time, t1, t2, t3, t4, t5, t6],
         xAxisID: 'DAY', 
-        yAxisID: 'NUM OF DRINKS',
+        yAxisID: 'Number of Drinks',
         datasets: [{
-            label: 'Peak BAC Level Per Day',
+            label: 'Number of Drinks Per Day',
             
             data: testdata,
             backgroundColor: [
@@ -55,7 +55,7 @@ var bargraph = new Chart(ctx, {
                 },
                 scaleLabel: {
                     display: true,
-                    labelString: 'Peak BAC Level'
+                    labelString: 'Number of Drinks'
                   }
             }],
             xAxes:[{
