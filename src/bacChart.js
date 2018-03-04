@@ -37,7 +37,7 @@ if(t5 > 12){
      t5  = t5 - 12;    
 }
 
-var ctx = document.getElementById("myChart");
+var ctx = document.getElementById("bacChart");
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -80,7 +80,4 @@ var myChart = new Chart(ctx, {
     }
 });
 
-document.getElementById("myChart").innerHTML = myChart;
-document.getElementById("myButton").onclick = function () {
-    location.href = "../dist/index.php";
-    };
+document.getElementById("bacChart").innerHTML = myChart;
