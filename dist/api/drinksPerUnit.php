@@ -11,7 +11,6 @@ if(!empty($_REQUEST['timeframe']) && !empty($_REQUEST['id'])) {
 	}
 
 	if (!empty($dateSql)) {
-		var_dump($dateSql);
 		$stmt = $pdo->prepare("SELECT bac AS x, date_added AS y FROM user_bac " . $dateSql . " AND user_id = :user_id");
 	    $user_id = (int)$_REQUEST['id'];
 	    $date_added = date('Y-m-d H:i:s');
