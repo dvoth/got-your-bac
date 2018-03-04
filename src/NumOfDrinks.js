@@ -39,10 +39,10 @@ var drinkgraph = new Chart(ctx, {
             
             data: testdata,
             backgroundColor: [
-                'rgba(139,195,74, 0.2)'
+                'rgba(255, 99, 132, 0.2)'
             ],
             borderColor: [
-                'rgba(139,195,74,1)'
+                'rgba(255,99,132,1)'
             ],
             borderWidth: 0.5,
         }]
