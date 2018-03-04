@@ -109,6 +109,11 @@ include('config.php');
                 
                 </footer>
             </div>
+<<<<<<< HEAD
+=======
+            <button onClick="updateBac(.4)">Update</button>
+            <button onClick="drinksPerUnit('month', 1)">Timeframe</button>
+>>>>>>> develop
       
         <!-- Form for user input. -->
 
@@ -252,14 +257,25 @@ include('config.php');
         </script>
         <script src="../src/drinks.js"></script>
         <script>
-            function updateBac(bac) {
+            function updateBac() {
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         $("#percent-box").val(this.responseText);
                     }
                 };
-                xmlhttp.open("GET", "database.php?bac=" + bac + "&id=" + 1, true);
+                xmlhttp.open("GET", "api/addDrink.php?bac=.04&id=1", true);
+                xmlhttp.send();
+            }
+
+            function drinksPerUnit(timeframe, userId) {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        alert(this.responseText);
+                    }
+                };
+                xmlhttp.open("GET", "api/drinksPerUnit.php?timeframe=" + timeframe + "&id=" + userId, true);
                 xmlhttp.send();
             }
         </script>

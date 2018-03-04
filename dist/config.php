@@ -12,5 +12,3 @@ try{
 } catch(PDOException $e){
     die("ERROR: Could not connect. " . $e->getMessage());
 }
-
-require_once 'database.php';
