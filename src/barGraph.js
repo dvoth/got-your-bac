@@ -22,7 +22,7 @@ var bargraph = new Chart(ctx, {
         datasets: [{
             label: 'Number of Drinks Per Day',
             
-            data: [1,2,3,4,5,6, 7],
+            data: [],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)'
             ],
