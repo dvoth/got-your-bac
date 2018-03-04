@@ -15,7 +15,7 @@ class user{
     getWeight(){
         return this.weight;
     }
-    
+
     calculateBAC(drinkSize, percentage){
         var genderConstant; 
 
