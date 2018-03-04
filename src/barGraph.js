@@ -23,7 +23,6 @@ $(document).ready(function () {
         }
     });
     
-    console.log(testdata)
     var ctx = document.getElementById("barGraph");
     var bargraph = new Chart(ctx, {
     type: 'bar',
@@ -34,7 +33,7 @@ $(document).ready(function () {
         datasets: [{
             label: 'Peak BAC Level Per Day',
             
-            data: [1,2,3,4,5,6,7],
+            data: testdata,
             backgroundColor: [
                 'rgba(139,195,74, 0.2)'
             ],
