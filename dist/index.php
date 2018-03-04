@@ -213,6 +213,14 @@ include('config.php');
                         </svg>
                         <br>
                     </div>
+                    <div class="custom-drinks">
+                        <select class="drink-selector w3-select">
+                            <option selected>Add a drink</option>
+                            <option value="1">Bud Light</option>
+                            <option value="2">Captain Morgan</option>
+                            <option value="3">Svedka</option>
+                        </select>
+                    </div>
                     <div class="w3-row" id="alchInput">
                         <label for="amount">Fluid oz:</label>
                         <input type="text" class="w3-input w3-dark-gray" name="amount" id="amount"/>
@@ -220,14 +228,6 @@ include('config.php');
                         <input type="text" class="w3-input w3-dark-gray" name="percentage" id="percentage"/>
                         <button id="submitDrink" class="beer-std-drink w3-button w3-white w3-round">Add Drink</button>
                     </div>
-                <div class="custom-drinks">
-                    <select class="drink-selector">
-                        <option selected>Add a drink</option>
-                        <option value="1">Bud Light</option>
-                        <option value="2">Captain Morgan</option>
-                        <option value="3">Svedka</option>
-                    </select>
-                </div>
                 </div>
             </div>
         </div>

@@ -15,6 +15,11 @@
           box-sizing: border-box;
 }
 
+.custom-drinks {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 #submitDrink{
   margin-top: 5%;
   text-align: center;
