@@ -13,19 +13,16 @@ var t6 = time +6;
 
 var testdata;
 
-/* var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        testdata = this.responseText;
-                        console.log(testdata);
-                        JSON.parse(testdata);
-                        testdata = testdata.replace(/"y"/g, 'y');
-                        testdata = testdata.replace(/"x"/g, 'x');
-                        console.log(testdata);
-                    }
-                };
-                xmlhttp.open("GET", "api/drinksPerUnit.php?timeframe=month&id=1", true);
-                xmlhttp.send(); */
+$.ajax({
+    async: false,
+    url:'api/drinksByDayOfWeek.php',
+    type:'get',
+    success:function(data){
+        testdata = JSON.parse(data)
+    }
+});
+
+console.log(testdata);
                 
 var ctx = document.getElementById("drinkGraph");
 var drinkgraph = new Chart(ctx, {
