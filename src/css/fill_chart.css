@@ -358,3 +358,35 @@
   #loggedNotifier{
     text-align: center;
   }
+
+  #createP{
+    margin-top: 5px;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+    text-align: center;
+  }
+
+  #addUser{
+    margin-top: 5px;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+    text-align: center;
+  }
+
+  #endAdding{
+    margin-top: 5px;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+    text-align: center;
+  }
+
+  #finished{
+    margin-top: 5px;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+    text-align: center;
+  }

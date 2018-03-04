@@ -270,21 +270,21 @@ var interval = setInterval( function () {
     $("#createP").css("display", "none");
     //button to create user-- link?
     //name/ add an user
-    $("#party_registration").append( "<br><label for=partyName> Party Name: </label> <br> <input class=w3-input type=text id=partyName style=width: 30%>");
+    $("#party_registration").append( "<br><label for=partyName> Party Name: </label> <br> <input class='w3-input' type=text id='partyName' style='width: 30%'>");
     //var name = $("#partyName").val();
-    $("#party_registration").append("<br><button id='endAdding'>Click When Party is Complete</button>");
-    $("#party_registration").append("<br><button id='addUser'>Add User</button>");
+    $("#party_registration").append("<br><button class='w3-button w3-green' id='addUser'>Add User</button>");
+    $("#party_registration").append("<br><button class='w3-button w3-green' id='endAdding'>Submit Party</button>");
     $("#addUser").on( "click", function(e){
         
         $("#addUser").css("display", "none");
-        $("#party_registration").append( "<br><label  for=userName> Name: </label> <br> <input class=w3-input type=text id=userName style=width: 30%>");
-        $("#party_registration").append( "<br><label  for=userWeight> Weight: </label> <br> <input class=w3-input type=text id=userWeight style=width: 30%>");
-        $("#party_registration").append( "<br><label for=userGender> Gender (M or F): </label> <br> <input class=w3-input type=text id=userGender style=width: 30%>");
+        $("#party_registration").append( "<br><label  for=userName> Name: </label> <br> <input class='w3-input' type=text id='userName' style='width: 30%'>");
+        $("#party_registration").append( "<br><label  for=userWeight> Weight: </label> <br> <input class='w3-input' type=text id='userWeight' style='width: 30%'>");
+        $("#party_registration").append( "<br><label for=userGender> Gender (M or F): </label> <br> <input class='w3-input' type=text id='userGender' style='width: 30%'>");
 
         var name = $("#partyName").val();
         nparty = new party(name,arrayU);
 
-         $("#party_registration").append("<br><button id='finished'>Done This User</button>");
+         $("#party_registration").append("<br><button class='w3-button w3-green' id='finished'>Submit User</button>");
         
          $("#finished").on( "click", function(e){
             
@@ -317,7 +317,7 @@ var interval = setInterval( function () {
                // $("label").css("visibility", "hidden");
                 $("#finished").css("visibility", "hidden");
                 $("#endAdding").css("visibility", "hidden");
-                $("#userList").append("<label id=pname>"+nparty.name+"</label>");
+                $("#userList").append("<label id=pname style='color: lightslategray'>"+nparty.name+"</label>");
 
                 var printing = nparty.getUserArray();
                  for(var i =0;i<printing.length;++i)
@@ -330,7 +330,7 @@ var interval = setInterval( function () {
 
                });
 
-    } );
+    });
 
 
  });
