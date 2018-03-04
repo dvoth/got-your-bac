@@ -222,7 +222,10 @@ include('config.php');
                     </div>
                 <div class="custom-drinks">
                     <select class="drink-selector">
-                        <option>Bud Light</option>
+                        <option selected>Add a drink</option>
+                        <option value="1">Bud Light</option>
+                        <option value="2">Captain Morgan</option>
+                        <option value="3">Svedka</option>
                     </select>
                 </div>
                 </div>
@@ -295,29 +298,6 @@ include('config.php');
             }
         </script>
         <script src="../src/drinks.js"></script>
-        <script>
-            function updateBac(bac) {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        $("#percent-box").val(this.responseText);
-                    }
-                };
-                xmlhttp.open("GET", "api/addDrink.php?bac=" + .04 + "&id=1", true);
-                xmlhttp.send();
-            }
-
-            function drinksPerUnit(timeframe, userId) {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        alert(this.responseText);
-                    }
-                };
-                xmlhttp.open("GET", "api/drinksPerUnit.php?timeframe=" + timeframe + "&id=" + userId, true);
-                xmlhttp.send();
-            }
-        </script>
     </body>
 
 </html>
