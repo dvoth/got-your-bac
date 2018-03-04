@@ -1,3 +1,7 @@
+var globalVariables={
+    userOnBackend: 'placeholder'
+};
+
 class user{
     constructor(name, age, weight, BAClevel, gender){
         this.name = name;
@@ -222,6 +226,8 @@ $("#submit").click(function(e){
         userGender.val("");
         userUsername.val("");
         userPassword.val("");
+
+        globalVariables.userOnBackend = userOnPage;
 
         //Validate a user is now logged in if successful.
         $("#notLoggedNotifier").addClass("hidden");

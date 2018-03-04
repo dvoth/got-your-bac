@@ -60,6 +60,8 @@ if(t14 > 12){
     t14  = t14 - 12;    
 }
 
+console.log("TEST: " + globalVariables.userOnBackend.weight);
+
 var ctx = document.getElementById("bacChart");
 var myChart = new Chart(ctx, {
     type: 'line',
