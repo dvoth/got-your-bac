@@ -80,9 +80,4 @@ var myChart = new Chart(ctx, {
     }
 });
 
-document.getElementById("BACButton").onclick = function () {
-    document.getElementById("bacChart").innerHTML = myChart;
-    };
-document.getElementById("homeButton").onclick = function () {
-    location.href = "../dist/index.php";
-    };
+document.getElementById("bacChart").innerHTML = myChart;
