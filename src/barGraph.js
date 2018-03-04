@@ -14,19 +14,14 @@ var t6 = time +6;
 var testdata;
 
 var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        testdata = this.responseText;
-                        console.log(testdata);
-                        JSON.stringify(testdata);
-                        testdata = testdata.replace(/"y"/g, 'y');
-                        testdata = testdata.replace(/"x"/g, 'x');
-                        JSON.parse(testdata);
-                        console.log(testdata);
-                    }
-                };
-                xmlhttp.open("GET", "api/drinksPerUnit.php?timeframe=month&id=1", true);
-                xmlhttp.send();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        testdata = JSON.parse(this.responseText);
+        console.log(testdata)
+    }
+};
+xmlhttp.open("GET", "api/drinksPerUnit.php?timeframe=month&id=1", true);
+xmlhttp.send();
                 
 var ctx = document.getElementById("barGraph");
 var bargraph = new Chart(ctx, {
@@ -38,7 +33,7 @@ var bargraph = new Chart(ctx, {
         datasets: [{
             label: 'Peak BAC Level Per Day',
             
-            data: [1,2,3,4,5,6,7],
+            data: testdata,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)'
             ],
