@@ -109,11 +109,6 @@ include('config.php');
                 
                 </footer>
             </div>
-<<<<<<< HEAD
-=======
-            <button onClick="updateBac(.4)">Update</button>
-            <button onClick="drinksPerUnit('month', 1)">Timeframe</button>
->>>>>>> develop
       
         <!-- Form for user input. -->
 
