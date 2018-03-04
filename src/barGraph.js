@@ -18,9 +18,10 @@ var xmlhttp = new XMLHttpRequest();
                     if (this.readyState == 4 && this.status == 200) {
                         testdata = this.responseText;
                         console.log(testdata);
-                        JSON.parse(testdata);
+                        JSON.stringify(testdata);
                         testdata = testdata.replace(/"y"/g, 'y');
                         testdata = testdata.replace(/"x"/g, 'x');
+                        JSON.parse(testdata);
                         console.log(testdata);
                     }
                 };
@@ -37,7 +38,7 @@ var bargraph = new Chart(ctx, {
         datasets: [{
             label: 'Peak BAC Level Per Day',
             
-            data: testdata,
+            data: [1,2,3,4,5,6,7],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)'
             ],
