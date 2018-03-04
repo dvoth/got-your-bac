@@ -17,13 +17,15 @@ $(function()
     val = val * 100;
     val = Math.round(val);
     var lessThanTenFlag;
+    var stdDrink = userOnPage.standardDrinks;
+    stdDrink = stdDrink.toFixed(2);
 
     if(val < 10){
-      $("#percent-box").val(".0" + val);
+      $("#percent-box").val(stdDrink);
       lessThanTenFlag = true;
     }
     else{
-      $("#percent-box").val("." + val);
+      $("#percent-box").val(stdDrink);
 
       lessThanTenFlag = false;
     }
@@ -67,6 +69,9 @@ $(function()
         $("#drinkbtn").addClass("w3-green");
         $("#drinkbtn").removeClass("w3-red");
         $("#drinkbtn").removeClass("w3-orange");
+        $("#partybtn").addClass("w3-green");
+        $("#partybtn").removeClass("w3-red");
+        $("#partybtn").removeClass("w3-orange");
       }
       else if(valOrig < colorInc * 16){
         $(".progress").parent().addClass("orange");
@@ -82,6 +87,9 @@ $(function()
         $("#drinkbtn").removeClass("w3-green");
         $("#drinkbtn").removeClass("w3-red");
         $("#drinkbtn").addClass("w3-orange");
+        $("#partybtn").removeClass("w3-green");
+        $("#partybtn").removeClass("w3-red");
+        $("#partybtn").addClass("w3-orange");
       }
       else{
         $(".progress").parent().addClass("red");
@@ -97,6 +105,9 @@ $(function()
         $("#drinkbtn").removeClass("w3-green");
         $("#drinkbtn").addClass("w3-red");
         $("#drinkbtn").removeClass("w3-orange");
+        $("#partybtn").removeClass("w3-green");
+        $("#partybtn").addClass("w3-red");
+        $("#partybtn").removeClass("w3-orange");
       }
     }
     else

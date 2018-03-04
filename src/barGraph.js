@@ -32,7 +32,6 @@ $(document).ready(function () {
         yAxisID: 'NUM OF DRINKS',
         datasets: [{
             label: 'Peak BAC Level Per Day',
-            
             data: testdata,
             backgroundColor: [
                 'rgba(139,195,74, 0.2)'

@@ -31,6 +31,11 @@ include('config.php');
             then made it more awesome and customizeable
             -->
 
+        <!--
+        Copyright (c) 2018 by June Hanabi (https://codepen.io/junebug12851/pen/mJZNqN)
+
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        -->
         <div class="wrapper w3-display-container w3-display-middle">
                 <br><br><br>
                 <div class="green">
@@ -43,7 +48,7 @@ include('config.php');
                 </div>
                 </div>
                 
-                <span>Current BAC: <input type="text" placeholder="0" id="percent-box" readonly></span><br>
+                <span>Standard Drinks: <input type="text" placeholder="0" id="percent-box" readonly></span><br>
                 
                 <div class="w3-display-container w3-display-topmiddle" style="width: 80%">
                     
@@ -116,7 +121,7 @@ include('config.php');
       
         <!-- Form for user input. -->
 
-        <div id="register" class="w3-sidebar w3-bar-block w3-display-container w3-display-topleft w3-animate-left" style="display:none">
+        <div id="register" class="w3-sidebar w3-bar-block w3-display-container w3-display-topleft w3-animate-left sidebaropen" style="display:none">
             <button onclick="w3_close()" class="w3-bar-item w3-button w3-large" class="closeButton">
                 <i class="fas fa-times"></i>
             </button>
@@ -153,7 +158,7 @@ include('config.php');
             <i class="fas fa-user-plus"></i>
         </button>
 
-        <div id="login" class="w3-sidebar w3-bar-block w3-display-container w3-display-topleft w3-animate-left" style="display:none">
+        <div id="login" class="w3-sidebar w3-bar-block w3-display-container w3-display-topleft w3-animate-left sidebaropen" style="display:none">
             <button onclick="w3_close_login()" class="w3-bar-item w3-button w3-large">
                 <i class="fas fa-times"></i>
             </button>
@@ -177,6 +182,11 @@ include('config.php');
             <i class="fas fa-chart-line"></i>
         </button>
 
+            <!--
+        Copyright (c) 2018 by evilpingwin (https://codepen.io/evilpingwin/pen/LNVWYa)
+
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        -->
         <div id="adddrinks" class="w3-sidebar w3-bar-block w3-display-right w3-animate-right w3-dark-gray" style="display:none">
             <button onclick="open_drink_adder_close()" class="w3-bar-item w3-button w3-large">
                 <i class="fas fa-times"></i>
@@ -217,7 +227,7 @@ include('config.php');
             <i class="fas fa-beer"></i>
         </button>
 
-        <div id="party" class="w3-sidebar w3-bar-block w3-display-container w3-display-topleft w3-animate-left" style="display:none">
+        <div id="party" class="w3-sidebar w3-bar-block w3-display-container w3-display-topleft w3-animate-left sidebaropen" style="display:none">
             <button onclick="party_close()" class="w3-bar-item w3-button w3-large">
                 <i class="fas fa-times"></i>
             </button>
