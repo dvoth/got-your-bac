@@ -52,7 +52,18 @@ include('config.php');
                 <span>Standard Drinks: <input type="text" placeholder="0" id="percent-box" readonly></span><br>
                 
                 <div class="w3-display-container w3-display-topmiddle" style="width: 80%">
-                    
+                    <div id="thirtyfivewarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
+                        <p>
+                            test1
+                        </p>
+                    </div>
+
+                    <div id="thirtywarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
+                        <p>
+                            test2
+                        </p>
+                    </div>
+
                     <div id="twentyfivewarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
                         <p>
                             Being this drunk means that you run the risk of vomiting in your sleep. If you dont properly begin to take care of yourself, then

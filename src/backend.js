@@ -130,7 +130,7 @@ class user{
             $("#twentywarn").addClass("wrapper");
             $("#twentyfivewarn").addClass("hidden")
         }
-        if(this.BAClevel >= 0.25){
+        if(this.BAClevel >= 0.25 && this.BAClevel < 0.3){
             $("#twentyfivewarn").removeClass("hidden");
             $("#greeting").addClass("hidden");
             $("#sixwarn").addClass("hidden");
@@ -139,6 +139,32 @@ class user{
             $("#sixteenwarn").addClass("hidden");
             $("#twentywarn").addClass("hidden");
             $("#twentyfivewarn").addClass("wrapper")
+            $("#thirtywarn").addClass("hidden");
+            $("#thirtyfivewarn").addClass("hidden");
+        }
+        if((Math.round(this.BAClevel * 100) / 100) >= 0.3 && this.BAClevel < .35){
+            $("#thirtywarn").removeClass("hidden");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").addClass("hidden");
+            $("#eightwarn").addClass("hidden");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden")
+            $("#thirtywarn").addClass("wrapper");
+            $("#thirtyfivewarn").addClass("hidden");
+        }
+        if((Math.round(this.BAClevel * 100)/ 100) >= 0.35){
+            $("#thirtyfivewarn").removeClass("hidden");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").addClass("hidden");
+            $("#eightwarn").addClass("hidden");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden")
+            $("#thirtywarn").addClass("hidden");
+            $("#thirtyfivewarn").addClass("wrapper");
         }
     }
 }
