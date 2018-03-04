@@ -57,6 +57,7 @@
         <script src="../src/backend.js"> </script>
         <script src="../node_modules/chart.js/dist/Chart.bundle.min.js"></script>
         <script src="../src/charts.js"></script>
+        <script src="../src/NumOfDrinks.js"></script>
         <script src="../src/bacChart.js"></script>
         <script src="../src/barGraph.js"></script>
     </footer>
