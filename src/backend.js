@@ -34,7 +34,8 @@ class user{
 
         percentage = percentage / 100;
 
-        this.BAClevel = this.BAClevel + (drinkSize * percentage * 5.14) / (this.weight * genderConstant); 
+        this.BAClevel = this.BAClevel + (drinkSize * percentage * 5.14) / (this.weight * genderConstant);
+       this.checkForBACWarning(); 
 
         console.log("bac level: " + this.BAClevel);
     }
@@ -44,17 +45,17 @@ class user{
     }
 
     checkForBACWarning(){
-        if(this.BAClevel < 8){
-            $("#greeting").removeClass("hidden");
-            $("#greeting").addClass("wrapper");
-            $("#sixwarn").addClass("hidden");
-            $("#eightwarn").addClass("hidden");
-            $("#thirteenwarn").addClass("hidden");
-            $("#sixteenwarn").addClass("hidden");
-            $("#twentywarn").addClass("hidden");
-            $("#twentyfivewarn").addClass("hidden")
+        if(this.BAClevel < .08){
+           // $("#greeting").removeClass("hidden");
+           // $("#greeting").addClass("wrapper");
+            //$("#sixwarn").addClass("hidden");
+           // $("#eightwarn").addClass("hidden");
+            //$("#thirteenwarn").addClass("hidden");
+            //$("#sixteenwarn").addClass("hidden");
+            //$("#twentywarn").addClass("hidden");
+            //$("#twentyfivewarn").addClass("hidden")
         }
-        if(this.BAClevel > 8){
+        if(this.BAClevel >=.08){
             $("#eightwarn").removeClass("hidden");
             $("#greeting").addClass("hidden");
             $("#sixwarn").addClass("hidden");
@@ -63,8 +64,8 @@ class user{
             $("#sixteenwarn").addClass("hidden");
             $("#twentywarn").addClass("hidden");
             $("#twentyfivewarn").addClass("hidden");
-        }
-         if(this.BAClevel<14 && this.BAClevel>8){
+        } 
+         if(this.BAClevel<.14 && this.BAClevel>.09){
             $("#thirteenwarn").removeClass("hidden");
             $("#greeting").addClass("hidden");
             $("#sixwarn").addClass("hidden");
@@ -75,7 +76,7 @@ class user{
             $("#twentyfivewarn").addClass("hidden");
         }
     
-         if(this.BAClevel<19 && this.BAClevel>13){
+         if(this.BAClevel<.19 && this.BAClevel>.13){
             $("#sixteenwarn").removeClass("hidden");
             $("#greeting").addClass("hidden");
             $("#sixwarn").addClass("hidden");
@@ -85,17 +86,18 @@ class user{
             $("#twentywarn").addClass("hidden");
             $("#twentyfivewarn").addClass("hidden")
         }
-        if(this.BAClevel<24 && this.BacLevel>19){
+        if(this.BAClevel<.24 && this.BacLevel>.19){
             $("#twentywarn").removeClass("hidden");
             $("#greeting").addClass("hidden");
             $("#sixwarn").addClass("hidden");
             $("#eightwarn").addClass("hidden");
+            $("#eightwarn").removeClass("wrapper");
             $("#thirteenwarn").addClass("hidden");
             $("#sixteenwarn").addClass("hidden");
             $("#twentywarn").addClass("wrapper");
             $("#twentyfivewarn").addClass("hidden")
         }
-        if(this.BAClevel>24){
+        if(this.BAClevel>.24){
             $("#twentyfivewarn").removeClass("hidden");
             $("#greeting").addClass("hidden");
             $("#sixwarn").addClass("hidden");

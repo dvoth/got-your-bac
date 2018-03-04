@@ -75,15 +75,16 @@ include('config.php');
 
                     <div id="eightwarn" class="hidden informational w3-panel w3-orange w3-card-4 w3-round w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-amber w3-top">
                         <p> 
-                            <header>
+                            
                                 Currently, you cannot drive. If you need to leave, call a ride. Here are some options: 
-                            </header>
-                        </p>
-                        <div><br>
+                           
+                        
+                        <div>
                             <a href ="https://www.uber.com"><img src="../src/images/Uber.png" id="ublogo" alt="uber"></a>
                             <a href = "https://www.lyft.com"><img src="../src/images/lyft-logo.png" id="lylogo" alt="lyft" ></a>
                             <a href = "https://google.com"><img src="../src/images/phoneicon.jpg" id="phonelogo" alt="phone" ></a>
                         </div>
+                    </p>
                     </div><br>
                     
                     <div id="sixwarn" class="hidden informational w3-panel w3-light-green w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-green w3-top">
