@@ -66,7 +66,7 @@ url = url.replace("?bac=", '');
 console.log(url);
 foundBac = Number(url);
 console.log(foundBac);
-
+var decrement = 0.015;
 var ctx = document.getElementById("bacChart");
 var myChart = new Chart(ctx, {
     type: 'line',
@@ -77,7 +77,7 @@ var myChart = new Chart(ctx, {
         datasets: [{
             label: 'BAC Level over time',
             
-            data: [0.18, 0.165,0.15, 0.135, 0.12, 0.105, 0.09, 0.075, 0.065, 0.032, 0.020, 0.010, 0.007],
+            data: [foundBac, (foundBac -decrement) ,(foundBac - (2*decrement)), (foundBac -(3*decrement)), (foundBac -(4*decrement)), (foundBac -(5*decrement)), (foundBac -(6*decrement)), (foundBac -(7*decrement), (foundBac -(8*decrement)), (foundBac - (9*decrement)), (foundBac - (10*decrement)), (foundBac - (11*decrement)), (foundBac - (12*decrement)))],
             backgroundColor: [
                 'rgba(139,195,74, 0.2)'
             ],
