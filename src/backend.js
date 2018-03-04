@@ -7,59 +7,174 @@ class user{
         this.gender = gender; 
     }
 
-    checkForBACWarning(){
-        if(this.BAClevel >= 8)
-        {
-        console.log( $("#eightwarn").innerHTML);
-        $("#eightwarn").removeClass("hidden");
-        $("#eightwarn").addClass("wrapper");
+    getGender(){
+        return this.gender;
+    }
+
+    getWeight(){
+        return this.weight;
+    }
     
+    calculateBAC(drinkSize, percentage){
+        var genderConstant; 
+
+        console.log("name: " + this.name);
+        
+        if(this.gender == 'male'){
+            genderConstant = 0.73;
+        }else if(this.gender == "female"){
+            genderConstant = 0.66;
         }
-         if(this.BAClevel<14 && this.BAClevel>8)
-        {
+
+        console.log("gender constant: " + genderConstant);
+
+        console.log("drink size: " + drinkSize);
+        console.log("percentage: " + percentage);
+        console.log("this bac: " + this.BAClevel);
+
+        percentage = percentage / 100;
+
+        this.BAClevel = this.BAClevel + (drinkSize * percentage * 5.14) / (this.weight * genderConstant);
+        this.checkForBACWarning(); 
+
+        console.log("bac level: " + this.BAClevel);
+    }
+
+    updateBAC(){
+         this.BAClevel = this.BAClevel - ((1/60) * 0.015);
+    }
+
+    checkForBACWarning(){
+        if(this.BAClevel < .04){
+            $("#greeting").removeClass("hidden");
+            $("#greeting").addClass("wrapper");
+            $("#sixwarn").addClass("hidden");
+            $("#eightwarn").addClass("hidden");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden")
+        }
+        if(this.BAClevel >= .04 && this.BAClevel <.08){
+            $("#greeting").removeClass("wrapper");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").removeClass("hidden");
+            $("#sixwarn").addClass("wrapper");
+            $("#eightwarn").addClass("hidden");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden")
+        }
+        if(this.BAClevel >=.08 && this.BAClevel < .13){
+            $("#eightwarn").removeClass("hidden");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").addClass("hidden");
+            $("#eightwarn").addClass("wrapper");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden");
+        } 
+         if(this.BAClevel < .16 && this.BAClevel>= 0.13){
+            $("#thirteenwarn").removeClass("hidden");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").addClass("hidden");
+            $("#eightwarn").addClass("hidden");
+            $("#thirteenwarn").addClass("wrapper");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden");
+        }
+    
+         if(this.BAClevel >= .16 && this.BAClevel < .20){
+            $("#sixteenwarn").removeClass("hidden");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").addClass("hidden");
+            $("#eightwarn").addClass("hidden");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("wrapper");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden")
+        }
+        if(this.BAClevel < .25 && this.BacLevel >= 0.20){
+            $("#twentywarn").removeClass("hidden");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").addClass("hidden");
             $("#eightwarn").addClass("hidden");
             $("#eightwarn").removeClass("wrapper");
-            $("#thirteenwarn").removeClass("hidden");
-            $("#thirteenwarn").addClass("wrapper");
-
-
-        }
-    
-         if(this.BAClevel<19 && this.BAClevel>13)
-        {
-
-             $("#sixteenwarn").removeClass("hidden");
-            $("#sixteenwarn").addClass("wrapper");
             $("#thirteenwarn").addClass("hidden");
-            $("#thirteenwarn").removeClass("wrapper");
-
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("wrapper");
+            $("#twentyfivewarn").addClass("hidden")
+        }
+        if(this.BAClevel >= 0.25){
+            $("#twentyfivewarn").removeClass("hidden");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").addClass("hidden");
+            $("#eightwarn").addClass("hidden");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("wrapper")
         }
     }
-
 }
-class backend{
-    calculateBAC(user, drinkSize, percentage){
-        var genderConstant; 
-        if(user.gender = "male"){
-            genderConstant = 0.68;
-        }else if(user.gender = "female"){
-            genderConstant = 0.55;
+
+class party{
+    constructor(name,arrayUsers){
+        this.name = name;
+        this.arrayUsers = arrayUsers;
+    }
+
+
+        addDrinker(user){
+            this.arrayUsers.push(user);
         }
 
-        var alcoholDose = drinkSize * percentage * 14;
-        var bodyWeightInGrams = user.weight *454 ;
-        var rawNumber = bodyWeightInGrams * genderConstant;
-        user.BAClevel = (alcoholDose / rawNumber) * 100; 
+        removeDrinker(user){
 
-    }
-    
-    updateBAC(){
-        user.BAClevel = user.BAClevel - ((1/60) * 0.015);
-    }
+            var pos = this.arrayUsers.indexOf(user);
+            this.arrayUsers.splice(pos,1);
+        }
+        
+        getNumDrinkers()
+        {
+            return this.arrayUsers.length;
+        }
 
+        getUserArray()
+        {
+            return this.arrayUsers;
+        }
 
-    }
+        averageBAC()
+        {
+            var total;
+            for(var i=0;i<arrayUsers.length; ++i)
+            {
+                total += this.arrayUsers[i].BAClevel;
+            }
+            return total;
+        }
 
+        highestBac()
+        {
+            var high =0;
+            for(var i=0;i<arrayUsers.length; ++i)
+            {
+                if(this.arrayUsers[i].BAClevel >high)
+                    high = this.arrayUsers[i].BAClevel;
+
+            }
+            return high;
+        }
+        //total/most drinks fn
+        //money spent
+        //most likely to vomit
+}
+
+var userOnPage;
 
 // Grabbing inputs using jQuery.
 $("#submit").click(function(e){
@@ -92,8 +207,13 @@ $("#submit").click(function(e){
     if(requiredFieldsFilled != false){
 
         //Create a temp user that will be persistently stored by SQL. 
-        var userOnPage = new user(userName.val(), userAge.val(), userWeight.val(), 13.0,userGender.val());
+        userOnPage = new user(userName.val(), userAge.val(), userWeight.val(), 0.0, userGender.val());
         userOnPage.checkForBACWarning();
+
+        var nameOfCurrentUser = userName.val();
+
+        console.log("weight: " + userOnPage.weight);
+        console.log("gender: " + userOnPage.gender);
 
         //Clear the input fields once we have persistently stored a user.
         userName.val("");
@@ -103,10 +223,37 @@ $("#submit").click(function(e){
         userUsername.val("");
         userPassword.val("");
 
-        alert(userOnPage.age + " and " + userOnPage.weight + " is " + userOnPage.name+" y0 "+ userOnPage.gender);
+        //Validate a user is now logged in if successful.
+        $("#notLoggedNotifier").addClass("hidden");
+        $("#loggedNotifier").html("Hello " + nameOfCurrentUser + "! Welcome to \"Got Your BAC\". Please input what drinks you consume, so we can help you track your BAC!");
+        $("#loggedNotifier").removeClass("hidden");
+
     }
 });
 
+//Grabbing input data from drink adder.
+$("#submitDrink").click(function(e){
+    e.preventDefault();
+    //Validating a fluid oz and percentage is put in.
+    var validateFlag;
+    var amount = $("#amount");
+    var percentage = $("#percentage");
+    var amountVerified;
+    var percentageVerified;
+
+    if(amount.val() == "" || percentage.val() == ""){
+        validateFlag = false;
+    }
+
+    if(validateFlag == false){
+        alert("Please enter in both a fluid ounce and percent value.");
+    }
+    else{
+        amountVerified = amount.val();
+        percentageVerified = percentage.val();
+        userOnPage.calculateBAC(amountVerified, percentageVerified);
+    }
+});
 
 
 var interval = setInterval( function () {

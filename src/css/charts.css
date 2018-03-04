@@ -1,8 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);	
 
 html,body {
-  border-top: 5px solid #fff;
-  background: black;
+  background-color: #1a1a1a;;
   color:green;
 }
 
@@ -74,6 +73,7 @@ a.control_prev {
 
 a.control_next {
   right: 0;
+  margin-right: 15px;
   border-radius: 2px 0 0 2px;
 }
 
