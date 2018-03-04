@@ -63,7 +63,7 @@ include('config.php');
                         <p> 
                             Not trying to be your mother, but soon you're gonna be a sloppy joe.
                             <br>
-                            Cut the liquor and stick to some water.
+                            Cut the liquor, you'll sober  quicker.
                         </p>
                     </div><br><br>
 
@@ -88,11 +88,15 @@ include('config.php');
                     </div><br>
                     
                     <div id="sixwarn" class="hidden informational w3-panel w3-light-green w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-green w3-top">
-                        <p>Placeholder</p>
+                    <p>You're probably feeling pretty good right now! Make sure you don't over do it!</p>
                     </div>
 
                     <div id="greeting" class="wrapper informational w3-panel w3-light-gray w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-gray w3-top">
-                        <p>Placeholder</p>
+                         <p>
+                            Here, we got your bac... literally.<br> This app is design to make drinkers aware of how much they've consumed 
+                            and what level their blood alcohol content is at. Please make sure you log in so you can start tracking your
+                            drinks!
+                        </p>
                     </div>
 
                 </div>
@@ -141,7 +145,7 @@ include('config.php');
                     <label for="f">F: &ensp;&nbsp;</label>  
                     <input class ="genderInput w3-radio" id="f" type="radio" name="gender" value="female">
                     <br><br>
-                    <button id="submit" class="w3-button w3-black w3-hover-green sidebarbtn">Submit</button>
+                    <button onclick=" w3_close()" id="submit" class="w3-button w3-black w3-hover-green sidebarbtn">Submit</button>
                 </div>
             </div>
         </div>

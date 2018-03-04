@@ -45,10 +45,21 @@ class user{
     }
 
     checkForBACWarning(){
-        if(this.BAClevel < .08){
+        if(this.BAClevel < .04){
             $("#greeting").removeClass("hidden");
             $("#greeting").addClass("wrapper");
             $("#sixwarn").addClass("hidden");
+            $("#eightwarn").addClass("hidden");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden")
+        }
+        if(this.BAClevel >= .04 && this.BAClevel <.08){
+            $("#greeting").removeClass("wrapper");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").removeClass("hidden");
+            $("#sixwarn").addClass("wrapper");
             $("#eightwarn").addClass("hidden");
             $("#thirteenwarn").addClass("hidden");
             $("#sixteenwarn").addClass("hidden");
