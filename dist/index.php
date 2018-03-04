@@ -220,6 +220,11 @@ include('config.php');
                         <input type="text" class="w3-input w3-dark-gray" name="percentage" id="percentage"/>
                         <button id="submitDrink" class="beer-std-drink w3-button w3-white w3-round">Add Drink</button>
                     </div>
+                <div class="custom-drinks">
+                    <select class="drink-selector">
+                        <option>Bud Light</option>
+                    </select>
+                </div>
                 </div>
             </div>
         </div>

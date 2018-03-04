@@ -2,7 +2,7 @@
 
 $servername = 'localhost';
 $db_username = 'root';
-$db_password = 'root';
+$db_password = '';
 $db_name = 'got-your-bac';
 
 try{

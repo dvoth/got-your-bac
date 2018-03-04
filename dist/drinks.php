@@ -55,6 +55,9 @@ include 'config.php';
                     <button class="beer-std-drink w3-button w3-dark-grey w3-round">Add drink</button>
                 </div>
               </div>
+              <div class="custom-drinks">
+                <p>test</p>
+              </div>
             </div>
         </div>
         <!-- jQuery library -->
