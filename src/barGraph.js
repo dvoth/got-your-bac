@@ -11,13 +11,17 @@ var t4 = time +4;
 var t5 = time +5;
 var t6 = time +6;
 
-var data;
+var testdata;
 
 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        data = this.responseText;
-                        console.log(data);
+                        testdata = this.responseText;
+                        console.log(testdata);
+                        JSON.stringify(testdata);
+                        JSON.parse(testdata);
+                        console.log(testdata.replace('"y"', 'y'));
+                        JSON.parse(testdata);
                     }
                 };
                 xmlhttp.open("GET", "api/drinksPerUnit.php?timeframe=month&id=1", true);
@@ -33,7 +37,7 @@ var bargraph = new Chart(ctx, {
         datasets: [{
             label: 'Number of Drinks Per Day',
             
-            data: data,
+            data: testdata,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)'
             ],
