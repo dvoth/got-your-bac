@@ -39,12 +39,8 @@ var bargraph = new Chart(ctx, {
             label: 'Peak BAC Level Per Day',
             
             data: [1,2,3,4,5,6,7],
-            backgroundColor: [
-                'rgba(139,195,74, 0.2)'
-            ],
-            borderColor: [
-                'rgba(139,195,74,1)'
-            ],
+            backgroundColor: 'rgba(139,195,74, 0.2)',
+            borderColor: 'rgba(139,195,74,1)',
             borderWidth: 0.5,
         }]
     },
