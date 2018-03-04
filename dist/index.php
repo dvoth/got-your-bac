@@ -105,7 +105,7 @@ include('config.php');
                 DISCLAIMER: Got Your BAC is merely an estimate to help you gauge your Blood Alcohol Content
                 We are not responsible for an accidents or liable for any misconduct that happens while using 
                 the app. If you have even a SINGLE DRINK we do not encourage driving. We encourage you to have 
-                someone who act you actually back, while we try to have you BAC.<br>
+                someone who actually has your actual back, while we try to have your BAC.<br>
 
                 Work is modified and inspired from <a href="https://codepen.io/JamieDixon/pen/Pqrjvv">Jamie Dixon's pen</a> <br>
                 
@@ -216,6 +216,17 @@ include('config.php');
         <button id="drinkbtn" class="w3-button w3-green w3-xlarge w3-display-right" style="height: 100%" onclick="open_drink_adder_open()">
             <i class="fas fa-beer"></i>
         </button>
+
+        <div id="party" class="w3-sidebar w3-bar-block w3-display-container w3-display-topleft w3-animate-left" style="display:none">
+            <button onclick="party_close()" class="w3-bar-item w3-button w3-large">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="party_registration" class="w3-container">
+            </div>
+        </div>
+        <button id="partybtn" class="w3-button w3-green w3-xlarge" onclick="party_open()">
+            <i class="fas fa-users"></i>
+        </button>
                    
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -254,6 +265,14 @@ include('config.php');
                 document.getElementById("adddrinks").style.width = "21%";
                 document.getElementById("adddrinks").style.height = "100%";
                 document.getElementById("adddrinks").style.display = "block";
+            }
+            function party_close(){
+                document.getElementById("party").style.display = "none";
+            }
+            function party_open(){
+                document.getElementById("party").style.width = "21%";
+                document.getElementById("party").style.height = "100%";
+                document.getElementById("party").style.display = "block";
             }
         </script>
         <script src="../src/drinks.js"></script>

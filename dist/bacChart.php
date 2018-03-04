@@ -20,7 +20,7 @@
             <ul>
                 <li style="position: relative; height:40vh; width:80vw"><canvas id="bacChart" class="w3-display-topmiddle" style="position: relative; height:40vh; width:80vw"></canvas></li>
                 <li style="position: relative; height:40vh; width:80vw"> <canvas id="barGraph" class="w3-display-topmiddle" style="position: relative; height:40vh; width:80vw"></canvas></li>
-                <li style="position: relative; height:40vh; width:80vw">SLIDE 3</li>
+                <li style="position: relative; height:40vh; width:80vw"><canvas id="drinkGraph" class="w3-display-topmiddle" style="position: relative; height:40vh; width:80vw"></canvas></li>
             </ul>  
         </div>
         <a href="#" class="control_prev"><</a>
