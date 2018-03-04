@@ -12,6 +12,7 @@ include('config.php');
         <link rel="stylesheet" href="../src/css/fill_chart.css">
         <!-- Font Awesome CDN -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <link rel="stylesheet" href="../src/css/party.css">
         <link rel="stylesheet" href="../src/css/drinks.css">
 
         <title>Got Your Bac</title>
@@ -128,7 +129,7 @@ include('config.php');
             <div id="registration" class="w3-container">
                 <div>
                     <label for="usernameInput">Username: </label>
-                    <input id="usernameInput" type="text" class="required w3-input" style="width: 30%">
+                    <input id="usernameInput" type="text" class="required w3-input form-input" style="width: 30%">
                     <br>
                     <label for="passwordInput">Password: </label>
                     <input id="passwordInput" type="password" class="required w3-input" style="width: 30%">
@@ -239,11 +240,27 @@ include('config.php');
             <button onclick="party_close()" class="w3-bar-item w3-button w3-large">
                 <i class="fas fa-times"></i>
             </button>
-            <div id="party_registration" class="w3-container">
-              
-            <button class="w3-button w3-green" id ="createP">Create Party</button>
-            <div id="userList"></div>  
-               
+            <div id="party_panel" class="w3-container">
+                <div class="party_registration">
+                    <label for="partyName"> Party Name: </label> <br> 
+                    <input class='w3-input' type="text" id='partyName' style='width: 100%'>
+                    <br><button class='w3-button w3-green' id='submit_party'>Submit Party</button>
+                </div>
+                <div class="initial_options">
+                    <button class="w3-button w3-green" id ="create-party">Create Party</button>
+                    <button class="w3-button w3-green" id ="join-party">Join Party</button>
+                </div>
+
+                <div id="party_list">
+
+                </div>
+                
+                <div id="userList">
+                    <h2 id="party-name"></h2>
+
+                    <button class="w3-button w3-green" id ="leave-party">Leave Party</button>
+                </div>  
+                   
             </div>
         </div>
         <button id="partybtn" class="w3-button w3-green w3-xlarge" onclick="party_open()">
