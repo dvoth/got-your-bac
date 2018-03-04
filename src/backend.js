@@ -263,3 +263,74 @@ var interval = setInterval( function () {
     updateBAC();},     
  60000);
 
+
+ $("#createP").click(function(e){
+    var arrayU=[];
+    var nparty;
+    $("#createP").css("display", "none");
+    //button to create user-- link?
+    //name/ add an user
+    $("#party_registration").append( "<br><label for=partyName> Party Name: </label> <br> <input class=w3-input type=text id=partyName style=width: 30%>");
+    //var name = $("#partyName").val();
+    $("#party_registration").append("<br><button id='endAdding'>Click When Party is Complete</button>");
+    $("#party_registration").append("<br><button id='addUser'>Add User</button>");
+    $("#addUser").on( "click", function(e){
+        
+        $("#addUser").css("display", "none");
+        $("#party_registration").append( "<br><label  for=userName> Name: </label> <br> <input class=w3-input type=text id=userName style=width: 30%>");
+        $("#party_registration").append( "<br><label  for=userWeight> Weight: </label> <br> <input class=w3-input type=text id=userWeight style=width: 30%>");
+        $("#party_registration").append( "<br><label for=userGender> Gender (M or F): </label> <br> <input class=w3-input type=text id=userGender style=width: 30%>");
+
+        var name = $("#partyName").val();
+        nparty = new party(name,arrayU);
+
+         $("#party_registration").append("<br><button id='finished'>Done This User</button>");
+        
+         $("#finished").on( "click", function(e){
+            
+          
+            var userName = $("#userName").val();
+            var userWeight = $("#userWeight").val();
+            var userGender = $("#userGender").val();
+ 
+   
+            var newb = new user(userName,21,userWeight,0,userGender);
+            //console.log(newb); 
+            nparty.addDrinker(newb);
+            console.log(nparty);
+                $("#userName").val(" ");
+                $("#userWeight").val(" ");
+                $("#userGender").val(" ");
+          
+           
+
+              } );
+
+
+              $("#endAdding").on( "click", function(e){
+                $("#userName").css("visibility", "hidden");
+                $("#userWeight").css("visibility", "hidden");
+                $("#userGender").css("visibility", "hidden");
+                $("#party_registration label").css("visibility","hidden");
+                $("#partyName").css("visibility", "hidden");
+               
+               // $("label").css("visibility", "hidden");
+                $("#finished").css("visibility", "hidden");
+                $("#endAdding").css("visibility", "hidden");
+                $("#userList").append("<label id=pname>"+nparty.name+"</label>");
+
+                var printing = nparty.getUserArray();
+                 for(var i =0;i<printing.length;++i)
+                 {
+                    console.log(printing[i].name);
+                    $("#userList").append( "<br><label for=ulist>" +printing[i].name+" </label>");
+                 }
+
+
+
+               });
+
+    } );
+
+
+ });
