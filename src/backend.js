@@ -9,35 +9,70 @@ class user{
     }
 
     checkForBACWarning(){
-        if(this.BAClevel >= 8)
-        {
-        console.log( $("#eightwarn").innerHTML);
-        $("#eightwarn").removeClass("hidden");
-        $("#eightwarn").addClass("wrapper");
-    
-        }
-         if(this.BAClevel<14 && this.BAClevel>8)
-        {
+        if(this.BAClevel < 8){
+            $("#greeting").removeClass("hidden");
+            $("#greeting").addClass("wrapper");
+            $("#sixwarn").addClass("hidden");
             $("#eightwarn").addClass("hidden");
-            $("#eightwarn").removeClass("wrapper");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden")
+        }
+        if(this.BAClevel > 8){
+            $("#eightwarn").removeClass("hidden");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").addClass("hidden");
+            $("#eightwarn").addClass("wrapper");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden");
+        }
+         if(this.BAClevel<14 && this.BAClevel>8){
             $("#thirteenwarn").removeClass("hidden");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").addClass("hidden");
+            $("#eightwarn").addClass("hidden");
             $("#thirteenwarn").addClass("wrapper");
-
-
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden");
         }
     
-         if(this.BAClevel<19 && this.BAClevel>13)
-        {
-
-             $("#sixteenwarn").removeClass("hidden");
-            $("#sixteenwarn").addClass("wrapper");
+         if(this.BAClevel<19 && this.BAClevel>13){
+            $("#sixteenwarn").removeClass("hidden");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").addClass("hidden");
+            $("#eightwarn").addClass("hidden");
             $("#thirteenwarn").addClass("hidden");
-            $("#thirteenwarn").removeClass("wrapper");
-
+            $("#sixteenwarn").addClass("wrapper");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden")
+        }
+        if(this.BAClevel<24 && this.BacLevel>19){
+            $("#twentywarn").removeClass("hidden");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").addClass("hidden");
+            $("#eightwarn").addClass("hidden");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("wrapper");
+            $("#twentyfivewarn").addClass("hidden")
+        }
+        if(this.BAClevel>24){
+            $("#twentyfivewarn").removeClass("hidden");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").addClass("hidden");
+            $("#eightwarn").addClass("hidden");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("wrapper")
         }
     }
-
 }
+
 class party{
     constructor(name,arrayUsers){
         this.name = name;
@@ -158,7 +193,7 @@ $("#submit").click(function(e){
         userUsername.val("");
         userPassword.val("");
 
-        alert(userOnPage.age + " and " + userOnPage.weight + " is " + userOnPage.name+" y0 "+ userOnPage.gender);
+        // alert(userOnPage.age + " and " + userOnPage.weight + " is " + userOnPage.name+ " " + userOnPage.gender);
     }
 
        

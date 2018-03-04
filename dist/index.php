@@ -12,13 +12,14 @@ include('config.php');
         <link rel="stylesheet" href="../src/css/fill_chart.css">
         <!-- Font Awesome CDN -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <link rel="stylesheet" href="../src/css/drinks.css">
 
         <title>Got Your Bac</title>
         <meta charset="utf-8">
 
     </head>
 
-    <body>
+    <body class="w3-display-container">
  
         <!-- https://codepen.io/junebug12851/pen/mJZNqN -->
             <!--
@@ -99,7 +100,6 @@ include('config.php');
                 <div>Work is modified and inspired from <a href="https://codepen.io/JamieDixon/pen/Pqrjvv">Jamie Dixon's pen</a></div>
                 </section>
             </div>
-            <button onClick="updateBac(.4)">Update</button>
       
         <!-- Form for user input. -->
 
@@ -147,10 +147,10 @@ include('config.php');
             <div id="login" class="w3-container">
                 <div>
                     <label for="userLogin">Username: </label>
-                    <input class="w3-input" type="text">
+                    <input class="w3-input" type="text" style="width: 30%">
                     <br>
                     <label for="userPass">Password: </label>
-                    <input class="w3-input" type="password">
+                    <input class="w3-input" type="password" style="width: 30%">
                     <br>
                     <button id="login" class="w3-button w3-black w3-hover-green sidebarbtn">Login</button>
                 </div>
@@ -162,6 +162,44 @@ include('config.php');
 
         <button id="datapage" class="w3-button w3-green w3-xlarge" onclick="navigate_to_data_page()">
             <i class="fas fa-chart-line"></i>
+        </button>
+
+        <div id="adddrinks" class="w3-sidebar w3-bar-block w3-display-right w3-animate-right w3-dark-gray" style="display:none">
+            <button onclick="open_drink_adder_close()" class="w3-bar-item w3-button w3-large">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="drinks-container w3-display-topright w3-dark-gray"> 
+                <div class="drink beer">
+                    <div>
+                        <svg id="beerGlass" viewbox="0 0 201 350" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+                            <defs>
+                                <clipPath id="beer-clippath">
+                                <path d="M41.17,330c-0.375,0 -0.75,-0.053 -1.1,-0.142l-0.07,-0.018c-1.81,-0.5 -3.19,-2.15 -3.36,-4.19l-25,-305.65l-0.092,0l-1.656,-20l180.217,0l-1.657,20l-0.092,0l-25,305.64c-0.21,2.47 -2.17,4.36 -4.54,4.36l-117.65,0Z" fill="#000"/>
+                                </clipPath>
+                            </defs>
+                            <image xlink:href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/395186/beer-pint-base.svg" x="0" y="0" width="100%" height="100%"/>
+                            <g class="glass-fill" clip-path="url(#beer-clippath)">
+                                <rect x="0" y="20" width="41" height="330"/>
+                                <rect x="40" y="20" width="31" height="330"/>
+                                <rect x="70" y="20" width="31" height="330"/>
+                                <rect x="100" y="20" width="100" height="330"/>
+                                <rect class="froth" x="0" y="0" width="210" height="20"/>
+                            </g>
+                        </svg>
+                        <br>
+                    </div>
+                    <div class="w3-row" id="alchInput">
+                        <label for="amount">Fluid oz:</label>
+                        <input type="text" class="w3-input w3-dark-gray" name="amount" id="amount"/>
+                        <label for="percentage">Percent Alcohol: </label>
+                        <input type="text" class="w3-input w3-dark-gray" name="percentage" id="percentage"/>
+                        <button id="drinkaddbtn" class="beer-std-drink w3-button w3-white w3-round">Add Drink</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="drinkbtn" class="w3-button w3-green w3-xlarge w3-display-right" style="height: 100%" onclick="open_drink_adder_open()">
+            <i class="fas fa-beer"></i>
         </button>
                    
         <!-- jQuery library -->
@@ -176,7 +214,7 @@ include('config.php');
         <script src="../src/backend.js"></script>
         <script>
             function w3_open() {
-                document.getElementById("register").style.width = "40%";
+                document.getElementById("register").style.width = "30%";
                 document.getElementById("register").style.height = "90%";
                 document.getElementById("register").style.display = "block";
             }
@@ -184,7 +222,7 @@ include('config.php');
                 document.getElementById("register").style.display = "none";
             }
             function w3_open_login() {
-                document.getElementById("login").style.width = "40%";
+                document.getElementById("login").style.width = "20%";
                 document.getElementById("login").style.height = "40%";
                 document.getElementById("login").style.display = "block";
             }
@@ -194,8 +232,16 @@ include('config.php');
             function navigate_to_data_page() {
                 location.href = "../dist/bacChart.php";
             }
+            function open_drink_adder_close(){
+                document.getElementById("adddrinks").style.display = "none";
+            }
+            function open_drink_adder_open(){
+                document.getElementById("adddrinks").style.width = "21%";
+                document.getElementById("adddrinks").style.height = "100%";
+                document.getElementById("adddrinks").style.display = "block";
+            }
         </script>
-
+        <script src="../src/drinks.js"></script>
         <script>
             function updateBac(bac) {
                 var xmlhttp = new XMLHttpRequest();

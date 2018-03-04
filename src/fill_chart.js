@@ -44,6 +44,9 @@ $(function()
         $("#datapage").addClass("w3-green");
         $("#datapage").removeClass("w3-red");
         $("#datapage").removeClass("w3-orange");
+        $("#drinkbtn").addClass("w3-green");
+        $("#drinkbtn").removeClass("w3-red");
+        $("#drinkbtn").removeClass("w3-orange");
       }
       else if(valOrig < colorInc * 16){
         $(".progress").parent().addClass("orange");
@@ -56,6 +59,9 @@ $(function()
         $("#datapage").removeClass("w3-green");
         $("#datapage").removeClass("w3-red");
         $("#datapage").addClass("w3-orange");
+        $("#drinkbtn").removeClass("w3-green");
+        $("#drinkbtn").removeClass("w3-red");
+        $("#drinkbtn").addClass("w3-orange");
       }
       else{
         $(".progress").parent().addClass("red");
@@ -68,6 +74,9 @@ $(function()
         $("#datapage").removeClass("w3-green");
         $("#datapage").addClass("w3-red");
         $("#datapage").removeClass("w3-orange");
+        $("#drinkbtn").removeClass("w3-green");
+        $("#drinkbtn").addClass("w3-red");
+        $("#drinkbtn").removeClass("w3-orange");
       }
     }
     else

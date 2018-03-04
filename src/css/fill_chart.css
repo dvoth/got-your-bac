@@ -337,12 +337,10 @@
     opacity: 1;
     height:42px;
     width:42px;
-    
   }
   #phonelogo{
     opacity:.65;
   }
-
 
   .hidden {
     display:none;
