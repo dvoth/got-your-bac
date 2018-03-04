@@ -177,7 +177,7 @@ class Party{
             {
                 total += this.arrayUsers[i].BAClevel;
             }
-            return total;
+            return total/arrayUsers.length;
         }
 
         highestBac()
@@ -191,9 +191,6 @@ class Party{
             }
             return high;
         }
-        //total/most drinks fn
-        //money spent
-        //most likely to vomit
 }
 
 var userOnPage;
