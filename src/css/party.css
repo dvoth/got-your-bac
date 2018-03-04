@@ -1,0 +1,16 @@
+.party_registration {
+	display:none;
+}
+
+
+#create-party, #join-party, #leave-party{
+margin-top: 5px;
+margin-left: 30%;
+margin-right: 30%;
+width: 40%;
+text-align: center;
+}
+
+#leave-party {
+	display:none;
+}
