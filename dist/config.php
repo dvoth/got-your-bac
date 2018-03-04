@@ -6,7 +6,7 @@ $db_password = '';
 $db_name = 'got-your-bac';
 
 try{
-    $pdo = new PDO("mysql:host=" . $servername . ";dbname=" . $db_name, $db_username, $db_password);
+    $pdo = new PDO("mysql:host=" . $servername . ";dbname=" . $db_name, $db_username, $db_password, [PDO::ATTR_EMULATE_PREPARES=>false]);
     // Set the PDO error mode to exception
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e){

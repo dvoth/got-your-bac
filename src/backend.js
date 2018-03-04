@@ -1,3 +1,7 @@
+var globalVariables={
+    userOnBackend: 'placeholder'
+};
+
 class user{
     constructor(name, age, weight, BAClevel, standardDrinks, gender){
         this.name = name;
@@ -15,7 +19,7 @@ class user{
     getWeight(){
         return this.weight;
     }
-    
+
     calculateBAC(drinkSize, percentage){
         var genderConstant; 
 
@@ -225,6 +229,8 @@ $("#submit").click(function(e){
         userGender.val("");
         userUsername.val("");
         userPassword.val("");
+
+        globalVariables.userOnBackend = userOnPage;
 
         //Validate a user is now logged in if successful.
         $("#notLoggedNotifier").addClass("hidden");
