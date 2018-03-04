@@ -24,47 +24,46 @@ $(document).ready(function () {
     });
     
     console.log(testdata)
-                    
     var ctx = document.getElementById("barGraph");
     var bargraph = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: [time, t1, t2, t3, t4, t5, t6],
-            xAxisID: 'DAY', 
-            yAxisID: 'NUM OF DRINKS',
-            datasets: [{
-                label: 'Peak BAC Level Per Day',
-                
-                data: testdata,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)'
-                ],
-                borderWidth: 0.5,
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true,
-                    },
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Peak BAC Level'
-                      }
-                }],
-                xAxes:[{
-                    ticks: {
-                        beginAtZero:true,
-                        max:31
-                    },
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Day'
-                      }
+    type: 'bar',
+    data: {
+        labels: [time, t1, t2, t3, t4, t5, t6],
+        xAxisID: 'DAY', 
+        yAxisID: 'NUM OF DRINKS',
+        datasets: [{
+            label: 'Peak BAC Level Per Day',
+            
+            data: [1,2,3,4,5,6,7],
+            backgroundColor: [
+                'rgba(139,195,74, 0.2)'
+            ],
+            borderColor: [
+                'rgba(139,195,74,1)'
+            ],
+            borderWidth: 0.5,
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Peak BAC Level'
+                  }
+            }],
+            xAxes:[{
+                ticks: {
+                    beginAtZero:true,
+                    max:31
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Day'
+                  }
                 }]
             }
         }

@@ -267,31 +267,21 @@
   .orange .progress .inner .percent {
     text-shadow: 0 0 10px #7e320a;
   }
-  #copyright {
-    margin-top: 25px;
+ 
+ 
+   footer{
     background-color: transparent;
-    font-size: 14px;
+    font-size: 10px;
     color: #b3b3b3;
     text-align: center;
+    width:100%;
+    height:1rem;
+    bottom:0;
+    padding-top: 25%;
+
   }
-  #copyright div {
-    margin-bottom: 10px;
-  }
-  #copyright a,
-  #copyright a:link {
-    color: #808080;
-    text-decoration: none;
-    border-bottom: 1px solid #808080;
-    padding-bottom: 2px;
-  }
-  #copyright a:active {
-    color: #b3b3b3;
-  }
-  #copyright a:hover {
-    color: #b3b3b3;
-    border-bottom: 1px solid #b3b3b3;
-    padding-bottom: 4px;
-  }
+
+
   .instructions {
     display: inline-block;
     margin: 5px 0;
@@ -337,27 +327,13 @@
     opacity: 1;
     height:42px;
     width:42px;
-    
   }
   #phonelogo{
     opacity:.65;
   }
 
-
   .hidden {
     display:none;
-  }
-
-  #eightwarn, #eightwarn span, #sixteenwarn, #sixteenwarn span
-  #thirteenwarn, #thirteenwarn span{
-    height:100%;
-    width:80%;
-    font-size:2rem;
-    font: bold;
-    align-content: center;
-    text-align: center;
-    border-collapse: on;
-
   }
 
   .move{
@@ -368,8 +344,17 @@
   .informational{
     text-align: center;
     font-family: Helvetica;
+    height: 70%;
   }
 
   .informational p{
-    color: white;
+    color: black;
+  }
+
+  #notLoggedNotifier{
+    text-align: center;
+  }
+
+  #loggedNotifier{
+    text-align: center;
   }
