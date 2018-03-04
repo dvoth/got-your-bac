@@ -34,8 +34,8 @@ class user{
 
         percentage = percentage / 100;
 
-        this.BAClevel = this.BAClevel + (drinkSize * percentage * 5.14) / (this.weight * genderConstant); 
-        this.checkForBACWarning();
+        this.BAClevel = this.BAClevel + (drinkSize * percentage * 5.14) / (this.weight * genderConstant);
+        this.checkForBACWarning(); 
 
         console.log("bac level: " + this.BAClevel);
     }
@@ -55,7 +55,7 @@ class user{
             $("#twentywarn").addClass("hidden");
             $("#twentyfivewarn").addClass("hidden")
         }
-        if(this.BAClevel > .08){
+        if(this.BAClevel >=.08 && this.BAClevel < .13){
             $("#eightwarn").removeClass("hidden");
             $("#greeting").addClass("hidden");
             $("#sixwarn").addClass("hidden");
@@ -64,8 +64,8 @@ class user{
             $("#sixteenwarn").addClass("hidden");
             $("#twentywarn").addClass("hidden");
             $("#twentyfivewarn").addClass("hidden");
-        }
-         if(this.BAClevel < .14 && this.BAClevel > .08){
+        } 
+         if(this.BAClevel < .16 && this.BAClevel>= 0.13){
             $("#thirteenwarn").removeClass("hidden");
             $("#greeting").addClass("hidden");
             $("#sixwarn").addClass("hidden");
@@ -76,7 +76,7 @@ class user{
             $("#twentyfivewarn").addClass("hidden");
         }
     
-         if(this.BAClevel < .19 && this.BAClevel > .13){
+         if(this.BAClevel >= .16 && this.BAClevel < .20){
             $("#sixteenwarn").removeClass("hidden");
             $("#greeting").addClass("hidden");
             $("#sixwarn").addClass("hidden");
@@ -86,17 +86,18 @@ class user{
             $("#twentywarn").addClass("hidden");
             $("#twentyfivewarn").addClass("hidden")
         }
-        if(this.BAClevel< .24 && this.BacLevel> .19){
+        if(this.BAClevel < .25 && this.BacLevel >= 0.20){
             $("#twentywarn").removeClass("hidden");
             $("#greeting").addClass("hidden");
             $("#sixwarn").addClass("hidden");
             $("#eightwarn").addClass("hidden");
+            $("#eightwarn").removeClass("wrapper");
             $("#thirteenwarn").addClass("hidden");
             $("#sixteenwarn").addClass("hidden");
             $("#twentywarn").addClass("wrapper");
             $("#twentyfivewarn").addClass("hidden")
         }
-        if(this.BAClevel> .24){
+        if(this.BAClevel >= 0.25){
             $("#twentyfivewarn").removeClass("hidden");
             $("#greeting").addClass("hidden");
             $("#sixwarn").addClass("hidden");

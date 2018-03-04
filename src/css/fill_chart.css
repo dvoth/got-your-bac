@@ -336,18 +336,6 @@
     display:none;
   }
 
-  #eightwarn, #eightwarn span, #sixteenwarn, #sixteenwarn span
-  #thirteenwarn, #thirteenwarn span{
-    height:100%;
-    width:80%;
-    font-size:2rem;
-    font: bold;
-    align-content: center;
-    text-align: center;
-    border-collapse: on;
-
-  }
-
   .move{
 
     position: relative;
