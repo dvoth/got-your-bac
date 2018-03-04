@@ -12,7 +12,9 @@
             <i class="fas fa-home"></i>
         </button>
 
-        <h1>Got Your BAC</h1>
+        <div class="w3-card-2 w3-light-green w3-topbar w3-bottombar w3-border-green" style="width: 40%; margin-left: 30%; margin-right: 30%; margin-top: 2%;">
+            <h1>Got Your BAC</h1>
+        </div>
         <a href="#" class="control_next">></a>
         <div id="slider">
             <ul>
