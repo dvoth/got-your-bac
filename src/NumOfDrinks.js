@@ -35,7 +35,7 @@ var drinkgraph = new Chart(ctx, {
         xAxisID: 'DAY', 
         yAxisID: 'Number of Drinks',
         datasets: [{
-            label: 'Number of Drinks Per Day',
+            label: 'Number of Drinks Per Day From the Last Week',
             
             data: testdata,
             backgroundColor: [
