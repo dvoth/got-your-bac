@@ -103,7 +103,7 @@ var myChart = new Chart(ctx, {
             xAxes:[{
                 scaleLabel: {
                     display: true,
-                    labelString: 'TIME (hours)'
+                    labelString: 'TIME'
                   }
             }]
         }

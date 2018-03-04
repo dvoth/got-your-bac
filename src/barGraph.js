@@ -1,16 +1,17 @@
 $(document).ready(function () {
     var d = new Date();
-    var time = d.getDay();
+    var time = d.getDate();
+    
     if(time > 31){
-         time = time - 12; 
+         time = time - 31; 
     }
 
-    var t1 = time +1;
-    var t2 = time +2;
-    var t3 = time +3;
-    var t4 = time +4;
-    var t5 = time +5;
-    var t6 = time +6;
+    var t1 = time +22;
+    var t2 = time +23;
+    var t3 = time -3;
+    var t4 = time -2;
+    var t5 = time -1;
+    var t6 = time +21;
 
     var testdata;
 
@@ -27,18 +28,14 @@ $(document).ready(function () {
     var bargraph = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: [time, t1, t2, t3, t4, t5, t6],
-        xAxisID: 'DAY', 
+        labels: [(time+20),t6, t1, t2, t3, t4, t5],
+        xAxisID: 'DATE', 
         yAxisID: 'NUM OF DRINKS',
         datasets: [{
-            label: 'Peak BAC Level Per Day',
+            label: 'Peak BAC Level Per Day From the Last Week',
             data: testdata,
-            backgroundColor: [
-                'rgba(139,195,74, 0.2)'
-            ],
-            borderColor: [
-                'rgba(139,195,74,1)'
-            ],
+            backgroundColor: 'rgba(139,195,74, 0.2)',
+            borderColor: 'rgba(139,195,74,1)',
             borderWidth: 0.5,
         }]
     },
@@ -55,7 +52,7 @@ $(document).ready(function () {
             }],
             xAxes:[{
                 ticks: {
-                    beginAtZero:true,
+                    beginAtZero:false,
                     max:31
                 },
                 scaleLabel: {

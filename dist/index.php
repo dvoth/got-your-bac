@@ -12,6 +12,7 @@ include('config.php');
         <link rel="stylesheet" href="../src/css/fill_chart.css">
         <!-- Font Awesome CDN -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <link rel="stylesheet" href="../src/css/party.css">
         <link rel="stylesheet" href="../src/css/drinks.css">
 
         <title>Got Your Bac</title>
@@ -51,30 +52,47 @@ include('config.php');
                 <span>Standard Drinks: <input type="text" placeholder="0" id="percent-box" readonly></span><br>
                 
                 <div class="w3-display-container w3-display-topmiddle" style="width: 80%">
-                    
+                    <div id="thirtyfivewarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
+                        <p>
+                            At this point, you are intoxicated to the point that it feels like you are under surgical anesthetics. 
+                            Do not drink anymore and seek medical attention immeadiately. 
+                        </p>
+                    </div>
+
+                    <div id="thirtywarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
+                        <p>
+                            You are extremely intoxicated. At this point you likely do not know where
+                            you are and may pass out suddenly. If you drink more, you risk death. 
+                        </p>
+                    </div>
+
                     <div id="twentyfivewarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
                         <p>
-                            Being this drunk means that you run the risk of vomiting in your sleep. It's definitely time to stop. 
+                            Being this drunk means that you run the risk of vomiting in your sleep. If you dont properly begin to take care of yourself, then
+                            you risk potential death. It's definitely time to stop. Put the drink down. 
                         </p>
                     </div>
 
                     <div id="twentywarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
                         <p>
-                            You should be careful - this drunk, you're prone to blackouts. 
+                            You should be careful - this drunk, you're prone to blackouts. Blacking out is when you are so intoxicated, you
+                            being to do things you normally wouldnt do and you wont remember it. Switch to water stat so you don't embarass yourself. 
                         </p>
                     </div>
 
                     <div id="sixteenwarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
                         <p> 
-                            Not trying to be your mother, but soon you're gonna be a sloppy joe.
+                            You might start feeling a little queasy. At a BAC this high, your speech  will begin to slur and you might find
+                            it hard to control your motor skills. 
                             <br>
-                            Cut the liquor, you'll sober  quicker.
+                            How about you start to cut the liquor; you'll sober  quicker.
                         </p>
                     </div><br><br>
 
                     <div id="thirteenwarn" class="hidden informational w3-panel w3-orange w3-card-4 w3-round w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-amber w3-top">
                         <p> 
-                            Things are probably getting a little fuzzy now. Take a thirty minute water break?
+                            Things are probably getting a little fuzzy now. Your motor controls are probably slowing down. It would be a good idea
+                            to take a 30 minute water break to let your body process all the alcohol you've consumed.
                         </p>
                     </div><br><br><br><br>
 
@@ -93,7 +111,9 @@ include('config.php');
                     </div><br>
                     
                     <div id="sixwarn" class="hidden informational w3-panel w3-light-green w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-green w3-top">
-                    <p>You're probably feeling pretty good right now! Make sure you don't over do it!</p>
+                    <p>You're probably feeling pretty good right now! You are in a "buzzed" state which means that your body feels relaxed, and you are feeling the effects
+                        of alcohol, but won't experience a hangover tomorrow or  experience a blackout state. 
+                    </p>
                     </div>
 
                     <div id="greeting" class="wrapper informational w3-panel w3-light-gray w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-gray w3-top">
@@ -111,10 +131,8 @@ include('config.php');
                 We are not responsible for an accidents or liable for any misconduct that happens while using 
                 the app. If you have even a SINGLE DRINK we do not encourage driving. We encourage you to have 
                 someone who actually has your actual back, while we try to have your BAC.<br>
-
-                Work is modified and inspired from <a href="https://codepen.io/JamieDixon/pen/Pqrjvv">Jamie Dixon's pen</a> <br>
                 
-                (c) 2015 John Mothershed - <a href="https://opensource.org/licenses/MIT">License MIT</a> 
+                (c) 2018 Dalton Voth - <a href="https://opensource.org/licenses/MIT">License MIT</a> 
                 
                 </footer>
             </div>
@@ -128,19 +146,19 @@ include('config.php');
             <div id="registration" class="w3-container">
                 <div>
                     <label for="usernameInput">Username: </label>
-                    <input id="usernameInput" type="text" class="required w3-input" style="width: 30%">
+                    <input id="usernameInput" type="text" class="required w3-input form-input" style="width: 100%">
                     <br>
                     <label for="passwordInput">Password: </label>
-                    <input id="passwordInput" type="password" class="required w3-input" style="width: 30%">
+                    <input id="passwordInput" type="password" class="required w3-input" style="width: 100%">
                     <br>
                     <label for="nameInput">Name: </label>       
-                    <input id = "nameInput" type="text" class="required w3-input" style="width: 30%">
+                    <input id = "nameInput" type="text" class="required w3-input" style="width: 100%">
                     <br>   
                     <label for="weightInput" style="float: left">Weight: </label>
                     <input id = "weightInput" type="text" class="required w3-input">
                     <br>
                     <label for="ageInput">Age: </label>
-                    <input id = "ageInput" type="text" class="required w3-input" style="width: 30%">
+                    <input id = "ageInput" type="text" class="required w3-input" style="width: 100%">
                     <br>
                     <label for="genderInput">Gender (M or F): </label>
                     <br>
@@ -165,10 +183,10 @@ include('config.php');
             <div id="login" class="w3-container">
                 <div>
                     <label for="userLogin">Username: </label>
-                    <input class="w3-input" type="text" style="width: 30%">
+                    <input class="w3-input" type="text" style="width: 100%">
                     <br>
                     <label for="userPass">Password: </label>
-                    <input class="w3-input" type="password" style="width: 30%">
+                    <input class="w3-input" type="password" style="width: 100%">
                     <br>
                     <button id="login" class="w3-button w3-black w3-hover-green sidebarbtn">Login</button>
                 </div>
@@ -239,11 +257,27 @@ include('config.php');
             <button onclick="party_close()" class="w3-bar-item w3-button w3-large">
                 <i class="fas fa-times"></i>
             </button>
-            <div id="party_registration" class="w3-container">
-              
-            <button class="w3-button w3-green" id ="createP">Create Party</button>
-            <div id="userList"></div>  
-               
+            <div id="party_panel" class="w3-container">
+                <div class="party_registration">
+                    <label for="partyName"> Party Name: </label> <br> 
+                    <input class='w3-input' type="text" id='partyName' style='width: 100%'>
+                    <br><button class='w3-button w3-green' id='submit_party'>Submit Party</button>
+                </div>
+                <div class="initial_options">
+                    <button class="w3-button w3-green" id ="create-party">Create Party</button>
+                    <button class="w3-button w3-green" id ="join-party">Join Party</button>
+                </div>
+
+                <div id="party_list">
+
+                </div>
+                
+                <div id="userList">
+                    <h2 id="party-name"></h2>
+
+                    <button class="w3-button w3-green" id ="leave-party">Leave Party</button>
+                </div>  
+                   
             </div>
         </div>
         <button id="partybtn" class="w3-button w3-green w3-xlarge" onclick="party_open()">
@@ -278,7 +312,12 @@ include('config.php');
                 document.getElementById("login").style.display = "none";
             }
             function navigate_to_data_page() {
-                location.href = "../dist/bacChart.php?bac=" + userOnPage.BAClevel;
+                if(userOnPage == undefined){
+                    alert("You must be logged in in order to see your statistics.")
+                }
+                else{
+                    location.href = "../dist/bacChart.php?bac=" + userOnPage.BAClevel;
+                }
             }
             function open_drink_adder_close(){
                 document.getElementById("adddrinks").style.display = "none";
@@ -292,9 +331,14 @@ include('config.php');
                 document.getElementById("party").style.display = "none";
             }
             function party_open(){
-                document.getElementById("party").style.width = "21%";
-                document.getElementById("party").style.height = "100%";
-                document.getElementById("party").style.display = "block";
+                if(userOnPage == undefined){
+                    alert("You must be logged in in order to join a party.");
+                }
+                else{
+                    document.getElementById("party").style.width = "21%";
+                    document.getElementById("party").style.height = "100%";
+                    document.getElementById("party").style.display = "block";
+                }
             }
         </script>
         <script src="../src/drinks.js"></script>

@@ -73,6 +73,21 @@ class user{
             $("#twentywarn").addClass("hidden");
             $("#twentyfivewarn").addClass("hidden")
         }
+        if(this.BAClevel > .06 && this.BAClevel < .08){
+            $("#greeting").removeClass("wrapper");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").removeClass("hidden");
+            $("#sixwarn").addClass("wrapper");
+            $("#eightwarn").addClass("hidden");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden");
+            $("#sixwarn").removeClass("w3-light-green");
+            $("#sixwarn").removeClass("w3-border-green");
+            $("#sixwarn").addClass("w3-orange");
+            $("#sixwarn").addClass("w3-border-amber");
+        }
         if(this.BAClevel >=.08 && this.BAClevel < .13){
             $("#eightwarn").removeClass("hidden");
             $("#greeting").addClass("hidden");
@@ -115,7 +130,7 @@ class user{
             $("#twentywarn").addClass("wrapper");
             $("#twentyfivewarn").addClass("hidden")
         }
-        if(this.BAClevel >= 0.25){
+        if(this.BAClevel >= 0.25 && this.BAClevel < 0.3){
             $("#twentyfivewarn").removeClass("hidden");
             $("#greeting").addClass("hidden");
             $("#sixwarn").addClass("hidden");
@@ -124,11 +139,37 @@ class user{
             $("#sixteenwarn").addClass("hidden");
             $("#twentywarn").addClass("hidden");
             $("#twentyfivewarn").addClass("wrapper")
+            $("#thirtywarn").addClass("hidden");
+            $("#thirtyfivewarn").addClass("hidden");
+        }
+        if((Math.round(this.BAClevel * 100) / 100) >= 0.3 && this.BAClevel < .35){
+            $("#thirtywarn").removeClass("hidden");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").addClass("hidden");
+            $("#eightwarn").addClass("hidden");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden")
+            $("#thirtywarn").addClass("wrapper");
+            $("#thirtyfivewarn").addClass("hidden");
+        }
+        if((Math.round(this.BAClevel * 100)/ 100) >= 0.35){
+            $("#thirtyfivewarn").removeClass("hidden");
+            $("#greeting").addClass("hidden");
+            $("#sixwarn").addClass("hidden");
+            $("#eightwarn").addClass("hidden");
+            $("#thirteenwarn").addClass("hidden");
+            $("#sixteenwarn").addClass("hidden");
+            $("#twentywarn").addClass("hidden");
+            $("#twentyfivewarn").addClass("hidden")
+            $("#thirtywarn").addClass("hidden");
+            $("#thirtyfivewarn").addClass("wrapper");
         }
     }
 }
 
-class party{
+class Party{
     constructor(name,arrayUsers){
         this.name = name;
         this.arrayUsers = arrayUsers;
@@ -162,7 +203,7 @@ class party{
             {
                 total += this.arrayUsers[i].BAClevel;
             }
-            return total;
+            return total/arrayUsers.length;
         }
 
         highestBac()
@@ -176,9 +217,6 @@ class party{
             }
             return high;
         }
-        //total/most drinks fn
-        //money spent
-        //most likely to vomit
 }
 
 var userOnPage;
@@ -269,74 +307,80 @@ var interval = setInterval( function () {
     updateBAC();},     
  60000);
 
+/**********************************/
+/*       ~ ~ ~ Party ~ ~ ~        */
+/**********************************/
 
- $("#createP").click(function(e){
-    var arrayU=[];
-    var nparty;
-    $("#createP").css("display", "none");
-    //button to create user-- link?
-    //name/ add an user
-    $("#party_registration").append( "<br><label for=partyName> Party Name: </label> <br> <input class='w3-input' type=text id='partyName' style='width: 30%'>");
-    //var name = $("#partyName").val();
-    $("#party_registration").append("<br><button class='w3-button w3-green' id='addUser'>Add User</button>");
-    $("#party_registration").append("<br><button class='w3-button w3-green' id='endAdding'>Submit Party</button>");
-    $("#addUser").on( "click", function(e){
-        
-        $("#addUser").css("display", "none");
-        $("#party_registration").append( "<br><label  for=userName> Name: </label> <br> <input class='w3-input' type=text id='userName' style='width: 30%'>");
-        $("#party_registration").append( "<br><label  for=userWeight> Weight: </label> <br> <input class='w3-input' type=text id='userWeight' style='width: 30%'>");
-        $("#party_registration").append( "<br><label for=userGender> Gender (M or F): </label> <br> <input class='w3-input' type=text id='userGender' style='width: 30%'>");
-
-        var name = $("#partyName").val();
-        nparty = new party(name,arrayU);
-
-         $("#party_registration").append("<br><button class='w3-button w3-green' id='finished'>Submit User</button>");
-        
-         $("#finished").on( "click", function(e){
-            
-          
-            var userName = $("#userName").val();
-            var userWeight = $("#userWeight").val();
-            var userGender = $("#userGender").val();
+var parties = [];
+var selectedParty;
  
-   
-            var newb = new user(userName,21,userWeight,0,userGender);
-            //console.log(newb); 
-            nparty.addDrinker(newb);
-            console.log(nparty);
-                $("#userName").val(" ");
-                $("#userWeight").val(" ");
-                $("#userGender").val(" ");
-          
-           
-
-              } );
-
-
-              $("#endAdding").on( "click", function(e){
-                $("#userName").css("visibility", "hidden");
-                $("#userWeight").css("visibility", "hidden");
-                $("#userGender").css("visibility", "hidden");
-                $("#party_registration label").css("visibility","hidden");
-                $("#partyName").css("visibility", "hidden");
-               
-               // $("label").css("visibility", "hidden");
-                $("#finished").css("visibility", "hidden");
-                $("#endAdding").css("visibility", "hidden");
-                $("#userList").append("<label id=pname style='color: lightslategray'>"+nparty.name+"</label>");
-
-                var printing = nparty.getUserArray();
-                 for(var i =0;i<printing.length;++i)
-                 {
-                    console.log(printing[i].name);
-                    $("#userList").append( "<br><label for=ulist>" +printing[i].name+" </label>");
-                 }
-
-
-
-               });
-
-    });
-
-
+ $("#create-party").click(function(e){
+    $(".initial_options").hide();
+    $(".party_registration").show();
  });
+
+ $("#submit_party").on("click", function() {
+    var partyName = $("#partyName").val()
+
+    if (partyName != '') {
+        var staticUsers = populateUsers()
+        parties.push(new Party(partyName, staticUsers))
+        
+        $(".party_registration").hide();
+        $("#partyName").val("")
+        $(".initial_options").show();
+
+    } else {
+        alert('Please enter a party name')
+    }
+    
+ })
+
+ $("#join-party").on("click", function() {
+    $(".initial_options").hide();
+    $("#party_list").show();
+    parties.forEach(function(party) {
+        $("#party_list").append("<button value='" + party.name + "' class='party-button w3-btn w3-white w3-border w3-border-green w3-round-xlarge' style='width:100%;'>" + party.name + "</button>")
+    })
+ })
+
+ $("#party_list").on("click", ".party-button", function() {
+    $("#party_list").hide();
+    $("#userList").show();
+    $("#leave-party").show();
+
+    var partyName = $(this).val()
+
+    parties.forEach(function(party) {
+        if (party.name == partyName) {
+            selectedParty = party
+        }
+    })
+
+    $("#party-name").text(partyName)
+    selectedParty.addDrinker(userOnPage)
+
+    selectedParty.arrayUsers.forEach(function(user) {
+        $("<p>" + user.name + "</p>").insertBefore("#leave-party")
+    })
+
+ })
+
+ $("#leave-party").on("click", function() {
+    this.selectedParty = null
+    $("#userList").hide();
+    $(".initial_options").show();
+ })
+
+function populateUsers() {
+    var users = []
+
+    users.push(new user("John Flanagan", 52, 206, .03, 2, 'male'))
+    users.push(new user("Stacy Smith", 32, 107, .04, 3, 'female'))
+    users.push(new user("Dalton Voth", 43, 190, .08, 4, 'male'))
+    users.push(new user("Jessica Tetzner", 44, 123, .12, 9, 'female'))
+    users.push(new user("Jace Plute", 23, 170, .18, 10, 'male'))
+    users.push(new user("Derek Oshner", 22, 190, .09, 6, 'male'))
+
+    return users
+}

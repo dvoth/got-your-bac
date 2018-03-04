@@ -310,7 +310,7 @@
 
   /* Registration form CSS. */
   #weightInput {
-    width: 30%
+    width: 100%
   }
 
   #registration label{
@@ -356,14 +356,6 @@
   }
 
   #loggedNotifier{
-    text-align: center;
-  }
-
-  #createP{
-    margin-top: 5px;
-    margin-left: 30%;
-    margin-right: 30%;
-    width: 40%;
     text-align: center;
   }
 

@@ -1,46 +1,42 @@
 var d = new Date();
-var time = d.getDay();
+var time = d.getDate();
 if(time > 31){
-     time = time - 12; 
+    time = time - 31; 
 }
 
-var t1 = time +1;
-var t2 = time +2;
-var t3 = time +3;
-var t4 = time +4;
-var t5 = time +5;
-var t6 = time +6;
+var t1 = time +22;
+var t2 = time +23;
+var t3 = time -3;
+var t4 = time -2;
+var t5 = time -1;
+var t6 = time +21;
+
 
 var testdata;
 
-/* var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        testdata = this.responseText;
-                        console.log(testdata);
-                        JSON.parse(testdata);
-                        testdata = testdata.replace(/"y"/g, 'y');
-                        testdata = testdata.replace(/"x"/g, 'x');
-                        console.log(testdata);
-                    }
-                };
-                xmlhttp.open("GET", "api/drinksPerUnit.php?timeframe=month&id=1", true);
-                xmlhttp.send(); */
+$.ajax({
+    async: false,
+    url:'api/drinksByDayOfWeek.php',
+    type:'get',
+    success:function(data){
+        testdata = JSON.parse(data)
+    }
+});
+
+console.log(testdata);
                 
 var ctx = document.getElementById("drinkGraph");
 var drinkgraph = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: [time, t1, t2, t3, t4, t5, t6],
+        labels: [(time+20),t6, t1, t2, t3, t4, t5],
         xAxisID: 'DAY', 
         yAxisID: 'Number of Drinks',
         datasets: [{
-            label: 'Number of Drinks Per Day',
+            label: 'Number of Drinks Per Day From the Last Week',
             
             data: testdata,
-            backgroundColor: [
-                'rgba(139,195,74, 0.2)'
-            ],
+            backgroundColor: 'rgba(139,195,74, 0.2)',
             borderColor: [
                 'rgba(139,195,74,1)'
             ],
