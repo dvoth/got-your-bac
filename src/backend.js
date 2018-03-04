@@ -30,8 +30,11 @@ class user{
 
         console.log("drink size: " + drinkSize);
         console.log("percentage: " + percentage);
+        console.log("this bac: " + this.BAClevel);
 
-        this.BAClevel = (drinkSize * percentage * 5.14) / (this.weight * genderConstant); 
+        percentage = percentage / 100;
+
+        this.BAClevel = this.BAClevel + (drinkSize * percentage * 5.14) / (this.weight * genderConstant); 
 
         console.log("bac level: " + this.BAClevel);
     }

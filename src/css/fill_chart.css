@@ -356,8 +356,9 @@
   .informational{
     text-align: center;
     font-family: Helvetica;
+    height: 70%;
   }
 
   .informational p{
-    color: white;
+    color: black;
   }

@@ -9,10 +9,24 @@ $(function()
     $(this).select();
   });
   
-  $("#drinkbtn").click(function()
+  $("#submitDrink").click(function()
   {
     //var val = $(this).val();
+    console.log("BAC LEVEL: " + userOnPage.BAClevel);
     var val = userOnPage.BAClevel;
+    val = val * 100;
+    val = Math.round(val);
+    var lessThanTenFlag;
+
+    if(val < 10){
+      $("#percent-box").val(".0" + val);
+      lessThanTenFlag = true;
+    }
+    else{
+      $("#percent-box").val("." + val);
+
+      lessThanTenFlag = false;
+    }
     
     if(val != ""
       && !isNaN(val)
@@ -29,7 +43,12 @@ $(function()
         $("#percent-box").val(0);
         $(".progress .percent").text("." + 0);
       }
-      else $(".progress .percent").text("." + valOrig);
+      else{
+        if(lessThanTenFlag == true)
+          $(".progress .percent").text(".0" + valOrig); 
+        else
+          $(".progress .percent").text("." + valOrig);
+      }
       
       $(".progress").parent().removeClass();
       $(".progress .water").css("top", val * conversionFactor + "%");

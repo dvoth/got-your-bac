@@ -43,23 +43,23 @@ include('config.php');
                 </div>
                 </div>
                 
-                <span>Current BAC: <input type="text" placeholder="0" id="percent-box"></span><br>
+                <span>Current BAC: <input type="text" placeholder="0" id="percent-box" readonly></span><br>
                 
                 <div class="w3-display-container w3-display-topmiddle" style="width: 80%">
                     
-                    <div id="twentyfivewarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red">
+                    <div id="twentyfivewarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
                         <p>
                             Being this drunk means that you run the risk of vomiting in your sleep. It's definitely time to stop. 
                         </p>
                     </div>
 
-                    <div id="twentywarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red">
+                    <div id="twentywarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
                         <p>
                             You should be careful - this drunk, you're prone to blackouts. 
                         </p>
                     </div>
 
-                    <div id="sixteenwarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red">
+                    <div id="sixteenwarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
                         <p> 
                             Not trying to be your mother, but soon you're gonna be a sloppy joe.
                             <br>
@@ -67,13 +67,13 @@ include('config.php');
                         </p>
                     </div><br><br>
 
-                    <div id="thirteenwarn" class="hidden informational w3-panel w3-orange w3-card-4 w3-round w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-amber">
+                    <div id="thirteenwarn" class="hidden informational w3-panel w3-orange w3-card-4 w3-round w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-amber w3-top">
                         <p> 
                             Things are probably getting a little fuzzy now. Take a thirty minute water break?
                         </p>
                     </div><br><br><br><br>
 
-                    <div id="eightwarn" class="hidden informational w3-panel w3-orange w3-card-4 w3-round w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-amber">
+                    <div id="eightwarn" class="hidden informational w3-panel w3-orange w3-card-4 w3-round w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-amber w3-top">
                         <p> 
                             <header>
                                 Currently, you cannot drive. If you need to leave, call a ride. Here are some options: 
@@ -86,11 +86,11 @@ include('config.php');
                         </div>
                     </div><br>
                     
-                    <div id="sixwarn" class="hidden informational w3-panel w3-light-green w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-green">
+                    <div id="sixwarn" class="hidden informational w3-panel w3-light-green w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-green w3-top">
                         <p>Placeholder</p>
                     </div>
 
-                    <div id="greeting" class="hidden informational w3-panel w3-light-gray w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-gray">
+                    <div id="greeting" class="wrapper informational w3-panel w3-light-gray w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-gray w3-top">
                         <p>Placeholder</p>
                     </div>
 
