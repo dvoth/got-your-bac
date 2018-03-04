@@ -3,12 +3,13 @@ var globalVariables={
 };
 
 class user{
-    constructor(name, age, weight, BAClevel, gender){
+    constructor(name, age, weight, BAClevel, standardDrinks, gender){
         this.name = name;
         this.age = age;
         this.weight = weight;
         this.BAClevel = BAClevel;
         this.gender = gender; 
+        this.standardDrinks = 0;
     }
 
     getGender(){
@@ -40,6 +41,8 @@ class user{
 
         this.BAClevel = this.BAClevel + (drinkSize * percentage * 5.14) / (this.weight * genderConstant);
         this.checkForBACWarning(); 
+
+        this.standardDrinks = this.standardDrinks + (drinkSize * 29.5735 * percentage * 0.789 / 14);
 
         console.log("bac level: " + this.BAClevel);
     }
@@ -211,7 +214,7 @@ $("#submit").click(function(e){
     if(requiredFieldsFilled != false){
 
         //Create a temp user that will be persistently stored by SQL. 
-        userOnPage = new user(userName.val(), userAge.val(), userWeight.val(), 0.0, userGender.val());
+        userOnPage = new user(userName.val(), userAge.val(), userWeight.val(), 0.0, 0.0, userGender.val());
         userOnPage.checkForBACWarning();
 
         var nameOfCurrentUser = userName.val();
@@ -233,7 +236,6 @@ $("#submit").click(function(e){
         $("#notLoggedNotifier").addClass("hidden");
         $("#loggedNotifier").html("Hello " + nameOfCurrentUser + "! Welcome to \"Got Your BAC\". Please input what drinks you consume, so we can help you track your BAC!");
         $("#loggedNotifier").removeClass("hidden");
-
     }
 });
 
