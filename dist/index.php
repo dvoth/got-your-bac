@@ -93,12 +93,18 @@ include('config.php');
                     </div>
 
                 </div>
+                <footer>
 
-                <section id="copyright">
-                <div>(c) 2015 John Mothershed - <a href="https://opensource.org/licenses/MIT">License MIT</a> </div>
+                DISCLAIMER: Got Your BAC is merely an estimate to help you gauge your Blood Alcohol Content
+                We are not responsible for an accidents or liable for any misconduct that happens while using 
+                the app. If you have even a SINGLE DRINK we do not encourage driving. We encourage you to have 
+                someone who act you actually back, while we try to have you BAC.<br>
+
+                Work is modified and inspired from <a href="https://codepen.io/JamieDixon/pen/Pqrjvv">Jamie Dixon's pen</a> <br>
                 
-                <div>Work is modified and inspired from <a href="https://codepen.io/JamieDixon/pen/Pqrjvv">Jamie Dixon's pen</a></div>
-                </section>
+                (c) 2015 John Mothershed - <a href="https://opensource.org/licenses/MIT">License MIT</a> 
+                
+                </footer>
             </div>
       
         <!-- Form for user input. -->

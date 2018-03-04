@@ -142,10 +142,6 @@ class backend{
         user.BAClevel = (alcoholDose / rawNumber) * 100; 
 
     }
-    
-    // updateBAC(){
-    //     user.BAClevel = user.BAClevel - ((1/60) * 0.015);
-    // }
 
 
     }
@@ -193,7 +189,6 @@ $("#submit").click(function(e){
         userUsername.val("");
         userPassword.val("");
 
-        // alert(userOnPage.age + " and " + userOnPage.weight + " is " + userOnPage.name+ " " + userOnPage.gender);
     }
 
        
