@@ -129,19 +129,19 @@ include('config.php');
             <div id="registration" class="w3-container">
                 <div>
                     <label for="usernameInput">Username: </label>
-                    <input id="usernameInput" type="text" class="required w3-input form-input" style="width: 30%">
+                    <input id="usernameInput" type="text" class="required w3-input form-input" style="width: 100%">
                     <br>
                     <label for="passwordInput">Password: </label>
-                    <input id="passwordInput" type="password" class="required w3-input" style="width: 30%">
+                    <input id="passwordInput" type="password" class="required w3-input" style="width: 100%">
                     <br>
                     <label for="nameInput">Name: </label>       
-                    <input id = "nameInput" type="text" class="required w3-input" style="width: 30%">
+                    <input id = "nameInput" type="text" class="required w3-input" style="width: 100%">
                     <br>   
                     <label for="weightInput" style="float: left">Weight: </label>
                     <input id = "weightInput" type="text" class="required w3-input">
                     <br>
                     <label for="ageInput">Age: </label>
-                    <input id = "ageInput" type="text" class="required w3-input" style="width: 30%">
+                    <input id = "ageInput" type="text" class="required w3-input" style="width: 100%">
                     <br>
                     <label for="genderInput">Gender (M or F): </label>
                     <br>
@@ -166,10 +166,10 @@ include('config.php');
             <div id="login" class="w3-container">
                 <div>
                     <label for="userLogin">Username: </label>
-                    <input class="w3-input" type="text" style="width: 30%">
+                    <input class="w3-input" type="text" style="width: 100%">
                     <br>
                     <label for="userPass">Password: </label>
-                    <input class="w3-input" type="password" style="width: 30%">
+                    <input class="w3-input" type="password" style="width: 100%">
                     <br>
                     <button id="login" class="w3-button w3-black w3-hover-green sidebarbtn">Login</button>
                 </div>
