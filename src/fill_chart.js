@@ -9,9 +9,10 @@ $(function()
     $(this).select();
   });
   
-  $("#percent-box").keyup(function()
+  $("#drinkbtn").click(function()
   {
-    var val = $(this).val();
+    //var val = $(this).val();
+    var val = userOnPage.BAClevel;
     
     if(val != ""
       && !isNaN(val)

@@ -87,9 +87,11 @@ include('config.php');
                     </div><br>
                     
                     <div id="sixwarn" class="hidden informational w3-panel w3-light-green w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-green">
+                        <p>Placeholder</p>
                     </div>
 
                     <div id="greeting" class="hidden informational w3-panel w3-light-gray w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-gray">
+                        <p>Placeholder</p>
                     </div>
 
                 </div>
@@ -193,7 +195,7 @@ include('config.php');
                         <input type="text" class="w3-input w3-dark-gray" name="amount" id="amount"/>
                         <label for="percentage">Percent Alcohol: </label>
                         <input type="text" class="w3-input w3-dark-gray" name="percentage" id="percentage"/>
-                        <button id="drinkaddbtn" class="beer-std-drink w3-button w3-white w3-round">Add Drink</button>
+                        <button id="submitDrink" class="beer-std-drink w3-button w3-white w3-round">Add Drink</button>
                     </div>
                 </div>
             </div>
@@ -208,10 +210,10 @@ include('config.php');
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <!-- JS file for the fill bubble -->
-        <script src="../src/fill_chart.js"></script>
         <!-- Backend JS for BAC calculation -->
         <script src="../src/backend.js"></script>
+        <!-- JS file for the fill bubble -->
+        <script src="../src/fill_chart.js"></script>
         <script>
             function w3_open() {
                 document.getElementById("register").style.width = "30%";

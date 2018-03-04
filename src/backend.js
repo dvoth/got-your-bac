@@ -5,7 +5,39 @@ class user{
         this.weight = weight;
         this.BAClevel = BAClevel;
         this.gender = gender; 
+    }
 
+    getGender(){
+        return this.gender;
+    }
+
+    getWeight(){
+        return this.weight;
+    }
+    
+    calculateBAC(drinkSize, percentage){
+        var genderConstant; 
+
+        console.log("name: " + this.name);
+        
+        if(this.gender == 'male'){
+            genderConstant = 0.73;
+        }else if(this.gender == "female"){
+            genderConstant = 0.66;
+        }
+
+        console.log("gender constant: " + genderConstant);
+
+        console.log("drink size: " + drinkSize);
+        console.log("percentage: " + percentage);
+
+        this.BAClevel = (drinkSize * percentage * 5.14) / (this.weight * genderConstant); 
+
+        console.log("bac level: " + this.BAClevel);
+    }
+
+    updateBAC(){
+         this.BAClevel = this.BAClevel - ((1/60) * 0.015);
     }
 
     checkForBACWarning(){
@@ -124,32 +156,9 @@ class party{
         //total/most drinks fn
         //money spent
         //most likely to vomit
+}
 
-
-    }
-class backend{
-    calculateBAC(user, drinkSize, percentage){
-        var genderConstant; 
-        if(user.gender = "male"){
-            genderConstant = 0.68;
-        }else if(user.gender = "female"){
-            genderConstant = 0.55;
-        }
-
-        var alcoholDose = drinkSize * percentage * 14;
-        var bodyWeightInGrams = user.weight *454 ;
-        var rawNumber = bodyWeightInGrams * genderConstant;
-        user.BAClevel = (alcoholDose / rawNumber) * 100; 
-
-    }
-    
-    // updateBAC(){
-    //     user.BAClevel = user.BAClevel - ((1/60) * 0.015);
-    // }
-
-
-    }
-
+var userOnPage;
 
 // Grabbing inputs using jQuery.
 $("#submit").click(function(e){
@@ -182,8 +191,10 @@ $("#submit").click(function(e){
     if(requiredFieldsFilled != false){
 
         //Create a temp user that will be persistently stored by SQL. 
-        var userOnPage = new user(userName.val(), userAge.val(), userWeight.val(), 13.0,userGender.val());
+        userOnPage = new user(userName.val(), userAge.val(), userWeight.val(), 0.0, userGender.val());
         userOnPage.checkForBACWarning();
+        console.log("weight: " + userOnPage.weight);
+        console.log("gender: " + userOnPage.gender);
 
         //Clear the input fields once we have persistently stored a user.
         userName.val("");
@@ -195,18 +206,31 @@ $("#submit").click(function(e){
 
         // alert(userOnPage.age + " and " + userOnPage.weight + " is " + userOnPage.name+ " " + userOnPage.gender);
     }
-
-       
 });
-var users =["tom","ur mom","yolo"];
-var issa = new party("pineapple",users);
-console.log(issa);
-issa.addDrinker("potato");
-console.log(issa);
-issa.removeDrinker("yolo");
-console.log(issa);
-var rand = issa.getNumDrinkers();
-console.log(rand);
+
+//Grabbing input data from drink adder.
+$("#submitDrink").click(function(e){
+    e.preventDefault();
+    //Validating a fluid oz and percentage is put in.
+    var validateFlag;
+    var amount = $("#amount");
+    var percentage = $("#percentage");
+    var amountVerified;
+    var percentageVerified;
+
+    if(amount.val() == "" || percentage.val() == ""){
+        validateFlag = false;
+    }
+
+    if(validateFlag == false){
+        alert("Please enter in both a fluid ounce and percent value.");
+    }
+    else{
+        amountVerified = amount.val();
+        percentageVerified = percentage.val();
+        userOnPage.calculateBAC(amountVerified, percentageVerified);
+    }
+});
 
 
 var interval = setInterval( function () {
