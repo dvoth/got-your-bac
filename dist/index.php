@@ -54,13 +54,15 @@ include('config.php');
                 <div class="w3-display-container w3-display-topmiddle" style="width: 80%">
                     <div id="thirtyfivewarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
                         <p>
-                            test1
+                            At this point, you are intoxicated to the point that it feels like you are under surgical anesthetics. 
+                            Do not drink anymore and seek medical attention immeadiately. 
                         </p>
                     </div>
 
                     <div id="thirtywarn" class="hidden informational w3-panel w3-pale-red w3-card-4 w3-round w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border w3-border-red w3-top">
                         <p>
-                            test2
+                            You are extremely intoxicated. At this point you likely do not know where
+                            you are and may pass out suddenly. If you drink more, you risk death. 
                         </p>
                     </div>
 
