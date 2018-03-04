@@ -60,6 +60,13 @@ if(t14 > 12){
     t14  = t14 - 12;    
 }
 
+var url = window.location.search;
+console.log(url);
+url = url.replace("?bac=", '');
+console.log(url);
+foundBac = Number(url);
+console.log(foundBac);
+
 var ctx = document.getElementById("bacChart");
 var myChart = new Chart(ctx, {
     type: 'line',

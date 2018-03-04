@@ -266,7 +266,7 @@ include('config.php');
                 document.getElementById("login").style.display = "none";
             }
             function navigate_to_data_page() {
-                location.href = "../dist/bacChart.php";
+                location.href = "../dist/bacChart.php?bac=" + userOnPage.BAClevel;
             }
             function open_drink_adder_close(){
                 document.getElementById("adddrinks").style.display = "none";
