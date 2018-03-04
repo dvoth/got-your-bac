@@ -204,7 +204,6 @@ $("#submit").click(function(e){
         userUsername.val("");
         userPassword.val("");
 
-        // alert(userOnPage.age + " and " + userOnPage.weight + " is " + userOnPage.name+ " " + userOnPage.gender);
     }
 });
 
